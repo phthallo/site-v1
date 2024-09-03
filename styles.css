@@ -1,0 +1,183 @@
+/* || GENERAL STYLES */
+
+@font-face {
+    font-family: "0xProto";
+    src: url(fonts/0xProto/0xProtoNerdFont-Regular.ttf) format("truetype");
+  }
+  
+:root {
+    --tangrey: #8e878c;
+    --neutralgrey:  #9f94a0;
+    --lightgrey: #bbb8bb; 
+    --pink:  #dcb8b0;
+    --peach:  #e5cab7;
+    --blue:  #9bb0cd;
+    --lightblue:  #cad5db;
+    --prideorange: #D62800;
+    --pridelightorange: #FF9B56;
+    --pridelightpink: #D462A6;
+    --pridepink: #A40062;
+    --dark: #120f19;
+    --bold: #947b82;
+  }
+  
+body { 
+    color: white;
+    font-family:'0xProto', monospace;
+    background-color: var(--dark);
+  }
+  
+b {
+    color: var(--bold);
+    &.normal {
+      color: #ffffff;
+    }
+  }
+  
+h4, a {
+    color: var(--pink);
+  }
+  
+pre {
+    color: white;
+    font-family:'0xProto', monospace;
+    line-height: 0.3em;
+  }
+  
+hr {
+    color: var(--lightblue);
+    width:100%;
+    margin: 1em 0em 1em;
+  }
+
+img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    border-radius: 1em;
+    margin-top: 1em;
+
+    opacity: 0.8;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+
+}
+img:hover {
+    opacity: 1;
+
+}
+
+i {
+  margin: 0 0.5em 0 0;
+}
+
+.icon {
+  margin: 0 0 0 0;
+}
+
+.primary {
+    padding: 2em;
+    margin: auto;
+    width: 65%;
+
+  }
+
+.columns {
+  display: flex; 
+  justify-content: space-between; 
+  .left, .right {
+    max-width: 48%;
+  }
+  .left {
+    text-align: left;
+  }
+  .right {
+    text-align: left;
+  }
+}
+
+.card {
+  padding: 1em;
+  max-width: 100%;
+  height: 10.5em;
+  margin: 0 0 1em 0;
+  background: #201d29;
+  border-radius: 0.5em;
+  overflow: auto;
+}
+
+.pillbox {
+  display: flex;
+  height: 100%;
+}
+  
+
+.pill {
+  background: var(--lightblue);
+  max-height: 1.5em;
+  display: inline-block;
+  color: #201d29;
+  font-weight: bold;
+  padding: 0.3em;
+  margin: 0.25em 0 0.25em 0;
+  border-radius: 0.6em;
+}
+
+.palette {
+    display: inline-block;
+    height: 2em;
+    width: 10%;
+  
+    &.tangrey {
+      background-color: var(--tangrey);
+    }
+    
+    &.neutralgrey {
+      background-color: var(--neutralgrey);
+    }
+    
+    &.lightgrey {
+      background-color: var(--lightgrey);
+    }
+    
+    &.pink {
+      background-color: var(--pink);
+    }
+    
+    &.peach {
+      background-color: var(--peach);
+    }
+    
+    &.blue {
+      background-color: #9bb0cd;
+    }
+    
+    &.lightblue {
+      background-color: #cad5db;
+    }
+    
+  }
+
+
+  /* || BREAKPOINTS */
+
+  @media screen and (width < 800px){ 
+    body {
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (width < 690px){ 
+
+    .primary {
+      width: 75%;
+  
+    }
+
+    .columns {
+      flex-direction: column;
+      .left, .right {
+        max-width: 100%;
+      }
+    }
+  }

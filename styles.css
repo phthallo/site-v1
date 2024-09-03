@@ -97,19 +97,15 @@ i {
 }
 
 .card {
-  padding: 1em;
+  padding: 1em 1em 0em 1em;
   max-width: 100%;
-  height: 10.5em;
+  height: 11em;
   margin: 0 0 1em 0;
   background: #201d29;
   border-radius: 0.5em;
   overflow: auto;
 }
 
-.pillbox {
-  display: flex;
-  height: 100%;
-}
   
 
 .pill {
@@ -179,5 +175,15 @@ i {
       .left, .right {
         max-width: 100%;
       }
+    .card {
+      padding-bottom: 1em;
     }
+    }
+  }
+
+  @media screen and (width < 450px){
+    .card {
+      height: 100%;
+    }
+
   }

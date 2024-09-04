@@ -1,0 +1,19 @@
+---
+import type { List } from 'postcss/lib/list';
+
+interface Props {
+	name: string;
+	description: string;
+	tools: Array<any>;
+}
+
+const { name, description, tools } = Astro.props;
+---
+
+<div class = "card"> 
+	<b>{name}</b> <i class="fa-brands fa-github"></i> <i class="fa-solid fa-sm fa-arrow-up-right-from-square"></i>
+	<p>{description}</p>
+	{tools.map((tools) => (
+		<div class = "pill"><i class = {tools.icon}></i>{tools.name}</div> 
+	  ))}
+</div>

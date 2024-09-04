@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Project Name",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "tools": [
+            {"name": "Ruby on Rails", "icon": "icon devicon-rails-plain"}
+        ]
+    },
+    {
+        "name": "PROJECT NAME",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "tools": [
+            {"name": "Javascript", "icon": "icon devicon-javascript-plain"},
+            {"name": "HTML", "icon": "icon devicon-html5-plain"},
+            {"name": "CSS", "icon": "icon devicon-css3-plain"}
+        ]
+    },
+    {
+        "name": "PROJECT NAME",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "tools": [
+            {"name": "Python", "icon": "icon devicon-python-plain"}
+        ]
+    },
+    {
+        "name": "PROJECT NAME",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "tools": [
+            {"name": "Pygame", "icon": "icon devicon-python-plain"}
+        ]
+    }
+]

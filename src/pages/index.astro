@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import projects from '../data/projects.json';
+---
+
+<Layout title="Home">
+	<main>
+		<p>i go by <b>phthallo</b> (<i>phay-low</i> or <i>thay-low</i>, i don't really mind) everywhere online.</p>
+		<p>i am a 16 year old programmer and high school student from australia.</p>
+		<p>this site is a work in progress. if you're here, i strongly recommend you visit my other site, <a href = "https://phthallo.hackclub.app">phthallo.hackclub.app</a>.</p>
+		<img class = "preview" src = "/paint.png" alt = "The map 'Paint' from the Celeste Strawberry Jam Collab."></img>
+		<h2>my projects</h2>
+		<div class = "columns">
+				{
+					projects.map(({ name, description, tools }) => (
+						<Card name = {name}, description={description}, tools={tools}/>
+					))
+					}
+		</div>
+	</div>
+	</main>
+</Layout>
+

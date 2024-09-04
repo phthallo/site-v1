@@ -4,6 +4,7 @@
     font-family: "0xProto";
     src: url(fonts/0xProto/0xProtoNerdFont-Regular.ttf) format("truetype");
   }
+
   
 :root {
     --tangrey: #8e878c;
@@ -20,11 +21,13 @@
     --dark: #120f19;
     --bold: #947b82;
   }
-  
+
 body { 
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--dark);
     color: white;
     font-family:'0xProto', monospace;
-    background-color: var(--dark);
   }
   
 b {
@@ -41,7 +44,6 @@ h4, a {
 pre {
     color: white;
     font-family:'0xProto', monospace;
-    line-height: 0.3em;
   }
   
 hr {
@@ -50,29 +52,28 @@ hr {
     margin: 1em 0em 1em;
   }
 
-img {
+footer {
+  text-align: center;
+}
+
+.preview {
     display: block;
     margin: auto;
     max-width: 100%;
     border-radius: 1em;
     margin-top: 1em;
-
     opacity: 0.8;
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 
 }
-img:hover {
+.preview:hover {
     opacity: 1;
 
 }
 
-i {
-  margin: 0 0.5em 0 0;
-}
-
 .icon {
-  margin: 0 0 0 0;
+  margin: 0 0.5em 0 0;
 }
 
 .primary {
@@ -83,24 +84,22 @@ i {
   }
 
 .columns {
-  display: flex; 
+  display: grid;
   justify-content: space-between; 
-  .left, .right {
-    max-width: 48%;
-  }
-  .left {
-    text-align: left;
-  }
-  .right {
-    text-align: left;
-  }
+  grid-gap: 1em;
+  grid-template-columns: repeat( 2, minmax(49%, 1fr) );
+
+}
+
+.alignitems {
+  display: flex;
+  justify-content: space-between;
 }
 
 .card {
   padding: 1em 1em 0em 1em;
   max-width: 100%;
   height: 11em;
-  margin: 0 0 1em 0;
   background: #201d29;
   border-radius: 0.5em;
   overflow: auto;
@@ -115,7 +114,7 @@ i {
   color: #201d29;
   font-weight: bold;
   padding: 0.3em;
-  margin: 0.25em 0 0.25em 0;
+  margin: 0.25em 0.5em 0.25em 0;
   border-radius: 0.6em;
 }
 
@@ -164,26 +163,25 @@ i {
   }
 
   @media screen and (width < 690px){ 
-
     .primary {
       width: 75%;
   
     }
-
     .columns {
-      flex-direction: column;
-      .left, .right {
-        max-width: 100%;
-      }
+      grid-template-columns: repeat( 1, minmax(49%, 1fr) );
+    }
+
+
     .card {
       padding-bottom: 1em;
     }
-    }
   }
 
-  @media screen and (width < 450px){
+  @media screen and (width < 500px){
     .card {
-      height: 100%;
+      height: fit-content;
     }
-
+    .alignitems {
+      flex-direction: column;
+    }
   }

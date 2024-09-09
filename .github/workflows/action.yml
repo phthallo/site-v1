@@ -10,13 +10,13 @@ jobs:
     steps: 
       - name: Connect via SSH and pull changes
         uses: appleboy/ssh-action@v1.0.3
+        env: 
+          deployscript: ${{ secrets.SCRIPT }}
         with: 
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          env: 
-            deployscript: ${{ secrets.SCRIPT }}
           script: |
             cd ${{ secrets.DIRECTORY }}            
             git pull

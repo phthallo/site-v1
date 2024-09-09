@@ -1,0 +1,25 @@
+name: 'nest-deploy'
+on: 
+  push
+
+jobs: 
+  nest-deploy:
+    name: Nest Deploy
+    runs-on: ubuntu-latest
+    environment: deploy
+    steps: 
+      - name: Connect via SSH and pull changes
+        uses: appleboy/ssh-action@v1.0.3
+        with: 
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          env: 
+            deployscript: {[ secrets.script ]}
+          script: |
+            cd ${{ secrets.DIRECTORY }}            
+            git pull
+          if: ${{ env.deployscript }}
+          run: |
+            /usr/bin/bash -l ${{ env.deployscript }}

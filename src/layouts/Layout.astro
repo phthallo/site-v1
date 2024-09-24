@@ -18,13 +18,12 @@ const { title } = Astro.props;
         <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
         <script src="https://kit.fontawesome.com/810dc5760a.js" crossorigin="anonymous"></script>
 	</head>
-	<body>
+	<body class = "pattern">
 		<div class = "primary">
 			<Header/>
 			<slot />
-		<Footer />
+			<Footer />
 		</div>
-
 	</body>
 </html>
 

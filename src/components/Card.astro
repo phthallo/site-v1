@@ -1,19 +1,30 @@
 ---
-import type { List } from 'postcss/lib/list';
-
 interface Props {
 	name: string;
+	url: string;
+	repo: string;
 	description: string;
 	tools: Array<any>;
 }
 
-const { name, description, tools } = Astro.props;
+const { name, url, repo, description, tools } = Astro.props;
 ---
 
 <div class = "card"> 
-	<b>{name}</b> <i class="fa-brands fa-github"></i> <i class="fa-solid fa-sm fa-arrow-up-right-from-square"></i>
+	<b>{name}</b>
+	<div style = "float:right">
+		<a href = {repo}><i class="fa-brands fa-github"></i></a>
+		<a href = {url}><i class="fa-solid fa-sm fa-arrow-up-right-from-square"></i></a>
+	</div>
+
+
+	<div style = "height:55%;">
 	<p>{description}</p>
-	{tools.map((tools) => (
-		<div class = "pill"><i class = {tools.icon}></i>{tools.name}</div> 
-	  ))}
+	</div>
+
+	<div style = "margin-top: auto; bottom:1em;">
+		{tools.map((tools) => (
+			<span class = "pill"><i class = {tools.icon}></i>{tools.name}</span> 
+	  	))}
+		</div>
 </div>

@@ -14,13 +14,14 @@
     --peach:  #e5cab7;
     --blue:  #9bb0cd;
     --lightblue:  #cad5db;
-    --prideorange: #D62800;
-    --pridelightorange: #FF9B56;
-    --pridelightpink: #D462A6;
-    --pridepink: #A40062;
     --dark: #120f19;
     --bold: #947b82;
   }
+
+::selection {
+  background: var(--blue);
+  color: var(--dark);
+}
 
 body { 
     margin: 0;
@@ -28,7 +29,7 @@ body {
     background-color: var(--dark);
     color: white;
     font-family:'0xProto', monospace;
-  }
+}
   
 b {
     color: var(--bold);
@@ -37,6 +38,10 @@ b {
     }
   }
   
+header {
+  padding-top: 5vh;
+}
+
 h4, a {
     color: var(--pink);
   }
@@ -56,15 +61,22 @@ footer {
   text-align: center;
 }
 
-.preview {
+.pattern {
+  background-color: #120f19;
+  background-image: url("../../topography.svg");
+  z-index: 1;
+  height: 100%;
+}
+
+  .preview {
     display: block;
     margin: auto;
-    max-width: 100%;
+    width: 100%;
     border-radius: 1em;
     margin-top: 1em;
     opacity: 0.8;
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+	  -webkit-transition: .3s ease-in-out;
+	  transition: .3s ease-in-out;
 
 }
 .preview:hover {
@@ -77,9 +89,13 @@ footer {
 }
 
 .primary {
-    padding: 2em;
+    padding: 2 2 0 2em;
     margin: auto;
     width: 65%;
+    z-index: 2;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 
   }
 
@@ -97,7 +113,7 @@ footer {
 }
 
 .card {
-  padding: 1em 1em 0em 1em;
+  padding: 1em 1em 0.25em 1em;
   max-width: 100%;
   height: 11em;
   background: #201d29;
@@ -156,9 +172,23 @@ footer {
 
   /* || BREAKPOINTS */
 
+@media screen and (width > 2000px){
+  .columns {
+    grid-template-columns: repeat( 4, minmax(25%, 1fr) );
+  }
+
+}
+
   @media screen and (width < 800px){ 
     body {
       font-size: 15px;
+    }
+    .columns {
+      grid-template-columns: repeat( 1, minmax(49%, 1fr) );
+    }
+    .card {
+      padding-bottom: 1em;
+      height: fit-content;
     }
   }
 
@@ -167,21 +197,16 @@ footer {
       width: 75%;
   
     }
-    .columns {
-      grid-template-columns: repeat( 1, minmax(49%, 1fr) );
-    }
 
 
-    .card {
-      padding-bottom: 1em;
-    }
   }
 
   @media screen and (width < 500px){
-    .card {
-      height: fit-content;
-    }
     .alignitems {
       flex-direction: column;
+    }
+
+    body {
+      padding-top: 0em;
     }
   }

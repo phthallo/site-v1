@@ -1,14 +1,9 @@
 [
     {
-        "name": "Project Name",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "tools": [
-            {"name": "Ruby on Rails", "icon": "icon devicon-rails-plain"}
-        ]
-    },
-    {
-        "name": "PROJECT NAME",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "name": "Terminal Portfolio",
+        "url": "https://terminal.phthallo.com",
+        "repo": "https://github.com/phthallo/terminal-website",
+        "description": "An interactive, functional Linux terminal themed portfolio website, complete with commands.",
         "tools": [
             {"name": "Javascript", "icon": "icon devicon-javascript-plain"},
             {"name": "HTML", "icon": "icon devicon-html5-plain"},
@@ -16,17 +11,31 @@
         ]
     },
     {
-        "name": "PROJECT NAME",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "name": "Pyflagoras",
+        "url": "https://pypi.org/project/pyflagoras/",
+        "repo": "https://github.com/phthallo/pyflagoras",
+        "description": "Python CLI for theming SVG files from images.",
         "tools": [
             {"name": "Python", "icon": "icon devicon-python-plain"}
         ]
     },
     {
-        "name": "PROJECT NAME",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "name": "Arduinooo",
+        "url": "",
+        "repo": "https://github.com/phthallo/arduinooo",
+        "description": "Archive of Our Own fanwork renderer for the Arduino Uno microcontroller.",
         "tools": [
-            {"name": "Pygame", "icon": "icon devicon-python-plain"}
+            {"name": "Processing", "icon": "icon devicon-processing-plain"},
+            {"name": "Arduino", "icon": "icon devicon-arduino-plain"}
+        ]
+    },
+    {
+        "name": "Gallery",
+        "url": "https://gallery.phthallo.com",
+        "repo": "https://github.com/phthallo/gallery",
+        "description": "A work-in-progress gallery for photos from Hack Club events, using Ruby on Rails.",
+        "tools": [
+            {"name": "Rails", "icon": "icon devicon-rails-plain"}
         ]
     }
 ]

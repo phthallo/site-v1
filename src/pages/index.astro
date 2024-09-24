@@ -6,15 +6,14 @@ import projects from '../data/projects.json';
 
 <Layout title="home">
 	<main>
-		<p>i go by <b>phthallo</b> (<i>phay-low</i> or <i>thay-low</i>, i don't really mind) everywhere online.</p>
-		<p>i am a 16 year old programmer and high school student from australia.</p>
-		<p>this site is a work in progress. if you're here, i strongly recommend you visit my other site, <a href = "https://phthallo.hackclub.app">phthallo.hackclub.app</a>.</p>
+		<p>i go by <b>phthallo</b> (<i>phay-low</i> or <i>thay-low</i>, i don't really mind) everywhere online. i am a 16 year old programmer and high school student from australia.</p>
+		<p>read more about me <a href = "/about">here</a>, or see all my projects <a href = "/contact">here</a>.</p>
 		<img class = "preview" src = "/paint.png" alt = "The map 'Paint' from the Celeste Strawberry Jam Collab."></img>
 		<h2>my projects</h2>
 		<div class = "columns">
 				{
-					projects.map(({ name, description, tools }) => (
-						<Card name = {name}, description={description}, tools={tools}/>
+					projects.map(({ name, url, repo, description, tools }) => (
+						<Card name = {name}, url={url}, repo={repo}, description={description}, tools={tools}/>
 					))
 					}
 		</div>

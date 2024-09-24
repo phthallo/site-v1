@@ -1,0 +1,19 @@
+---
+const pages = [
+    {
+        slug: undefined
+    },
+    {
+        slug: 'about'
+    },
+    {
+        slug: 'index'
+    }
+]
+
+const { slug } = Astro.params;
+const page = pages.find((page) => page.slug === slug);
+if (!page) {
+    return new Response(null, { status: 404 })
+};
+---

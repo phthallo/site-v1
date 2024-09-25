@@ -11,20 +11,20 @@ const { name, url, repo, description, tools } = Astro.props;
 ---
 
 <div class = "card"> 
-	<b>{name}</b>
-	<div style = "float:right">
+	<a style = "text-decoration: none" href = {url}>{name}</a>
+	<div style = "position: absolute; right:1em">
 		<a href = {repo}><i class="fa-brands fa-github"></i></a>
 		<a href = {url}><i class="fa-solid fa-sm fa-arrow-up-right-from-square"></i></a>
 	</div>
 
 
-	<div style = "height:55%;">
+	<div style = "flex-grow: 1;">
 	<p>{description}</p>
 	</div>
 
-	<div style = "margin-top: auto; bottom:1em;">
+	<div style = "margin-top: auto; bottom:0;">
 		{tools.map((tools) => (
 			<span class = "pill"><i class = {tools.icon}></i>{tools.name}</span> 
 	  	))}
-		</div>
+	</div>
 </div>

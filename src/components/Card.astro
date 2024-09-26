@@ -10,21 +10,21 @@ interface Props {
 const { name, url, repo, description, tools } = Astro.props;
 ---
 
-<div class = "card"> 
-	<a style = "text-decoration: none" href = {url}>{name}</a>
-	<div style = "position: absolute; right:1em">
+<div class = "p-4 h-fit lg:h-56 rounded-lg bg-palette-900 overflow-auto flex flex-col relative"> 
+	<a class= "no-underline" href = {url}>{name}</a>
+	<div class = "absolute right-4">
 		<a href = {repo}><i class="fa-brands fa-github"></i></a>
 		<a href = {url}><i class="fa-solid fa-sm fa-arrow-up-right-from-square"></i></a>
 	</div>
 
 
-	<div style = "flex-grow: 1;">
+	<div class = "grow">
 	<p>{description}</p>
 	</div>
 
-	<div style = "margin-top: auto; bottom:0;">
+	<div class = "mt-auto bottom-0">
 		{tools.map((tools) => (
-			<span class = "pill"><i class = {tools.icon}></i>{tools.name}</span> 
+			<span class = "bg-palette-600 max-h-8 inline-block text-palette-900 font-bold rounded-lg p-1 my-1 mr-2 ml-0"><i class = {`${tools.icon} mr-2`}></i>{tools.name}</span> 
 	  	))}
 	</div>
 </div>

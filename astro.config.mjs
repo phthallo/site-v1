@@ -8,7 +8,7 @@ export default defineConfig({
   site: 'https://phthallo.com/',
   //output: "server",
   integrations: [
-    tailwind({applyBaseStyles:false}),
+    tailwind({applyBaseStyles:true}),
     sitemap({
 			filter: page => page !== 'https://phthallo.com/404'
 		})]

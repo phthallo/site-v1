@@ -1,13 +1,19 @@
+---
+const colours = [
+    "bg-palette-50", 
+    "bg-palette-100", 
+    "bg-palette-200",
+    "bg-palette-300",
+    "bg-palette-400",
+    "bg-palette-500",
+    "bg-palette-600",
+]
+---
 <footer>
-    <div style = "margin: auto; margin-top: 1em;">
-        <span class = "palette tangrey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--
-    --><span class = "palette neutralgrey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--
-    --><span class = "palette lightgrey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--
-    --><span class = "palette pink">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--
-    --><span class = "palette peach">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--
-    --><span class = "palette blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!---
-    --><span class = "palette lightblue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    <i><p>this website is <a href = "https://github.com/phthallo/personal-site">open source</a></i></p>
-
+    <div class = "mx-auto mt-4 mb-10">
+        {colours.map((colour) => 
+        <span class = {`inline-block h-8 w-[10%] ${colour}`}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--
+        -->)}
+    <i><p class = "text-sm">this website is <a href = "https://github.com/phthallo/site-v1">open source</a>. made with tailwindcss and astro</i></p>
     </div>
 </footer>

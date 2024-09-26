@@ -4,20 +4,20 @@ const link = ((url.pathname.split("/")).filter(i => i))
 ---
 <header>
 {link ? 
-    <div class = "navigation">
-        ~/ <a href = "/">home</a>
-        {link.map((data) => <span> / <a href = {`/${data}`}> {data}</a></span>)}   
+    <div id = "navigation" class = "mb-3">
+        ~/ <a class = "no-underline" href = "/">home</a>
+        {link.map((data) => <span> / <a class = "no-underline" href = {`/${data}`}> {data}</a></span>)}   
     </div> : null}
 <h1>Hi, I'm Annabel.</h1> 
 <hr>
-<div class = "alignitems">
-    <div class = "left">
-        <b><i class="icon fa-regular fa-envelope"></i>contact<span class="fa-solid fa-sm fa-at" title = "@"></span>phthallo.com</b><br>
-        <b><a style = "color: var(--bold)" href = "https://github.com/phthallo"><i class="icon fa-brands fa-github"></i>@phthallo</b></a>
+<div class = "flex justify-between flex-col sm:flex-row transition-all duration-300 leading-5">
+    <div>
+        <b><i class="mr-2 fa-regular fa-envelope"></i>contact<span class="fa-solid fa-sm fa-at" title = "@"></span>phthallo.com</b><br>
+        <b><a class = "text-palette-800" href = "https://github.com/phthallo"><i class="mr-2 fa-brands fa-github"></i>@phthallo</b></a>
     </div>
-    <div class = "right">
-        <b><a style = "color: var(--bold)" href = "https://linkedin.com/in/annabelquach"><i class="icon fa-brands fa-linkedin"></i>annabelquach</b></a><br>
-        <b><i class="icon fa-brands fa-github"></i>@phthallo</b>
+    <div>
+        <b><a class = "text-palette-800" href = "https://linkedin.com/in/annabelquach"><i class="mr-2 fa-brands fa-linkedin"></i>annabelquach</b></a><br>
+        <b><i class="mr-2 fa-brands fa-github"></i>@phthallo</b>
     </div>
 </div>
 <hr>

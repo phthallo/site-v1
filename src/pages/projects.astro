@@ -1,11 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Columns from "../components/Columns.astro";
+import Card from "../components/Card.astro";
+import projects from "../data/projects.json";
 ---
 
 <Layout title="projects">
-	<main>
-        <body>
-            <p>this page was intentionally left blank!</p>
-        </body>
+    <main>
+        <h2>my projects</h2>
+		<Columns>
+				{projects.map(({ name, url, repo, description, tools }) => (
+				<Card name = {name}, url={url}, repo={repo}, description={description}, tools={tools}/>))}
+		</Columns>
     </main>
 </Layout>

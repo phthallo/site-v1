@@ -1,87 +1,100 @@
 @tailwind base;
-
+@tailwind components;
 
 @layer base {
-  @font-face {
-    font-family: "0xProto";
-    src: url("/public/fonts/0xProto/0xProtoNerdFont-Regular.ttf") format("truetype");
-  }
-  :root {
-    --tangrey: #8e878c;
-    --neutralgrey:  #9f94a0;
-    --lightgrey: #bbb8bb; 
-    --pink:  #dcb8b0;
-    --peach:  #e5cab7;
-    --blue:  #9bb0cd;
-    --lightblue:  #cad5db;
-    --dark: #120f19;
-    --bold: #947b82;
-      font-family:"0xProto", monospace;
-
+    @font-face {
+        font-family: "0xProto";
+        src: url("/fonts/0xProto/0xProtoNerdFont-Regular.ttf") format("truetype");
+    }
+    :root {
+        --tangrey: #8e878c;
+        --neutralgrey: #9f94a0;
+        --lightgrey: #bbb8bb;
+        --pink: #dcb8b0;
+        --peach: #e5cab7;
+        --blue: #9bb0cd;
+        --lightblue: #cad5db;
+        --dark: #120f19;
+        --bold: #947b82;
+        font-family: "0xProto", monospace;
     }
 
-  ::selection {
-    background: var(--blue);
-    color: var(--dark);
-  }
-
-  body { 
-    margin: 0;
-    min-height: 100vh;
-    background-color: var(--dark);
-    color: white;
-  }
-
-  h1 {
-    font-size: 2.125em;
-  }
-
-  h2 {
-    font-size: 1.4em;
-    margin-top: 0.83em;
-    margin-bottom: 0.83em;
-  }
-
-  p {
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-
-  b {
-    color: var(--bold);
-    font-weight: 700;
-  }
-    
-  header {
-    padding-top: 5.5vh;
-  }
-
-
-  h4, a {
-      color: var(--pink);
-    }
-    
-  a {
-    text-decoration: underline;
-  }
-
-    
-  pre {
-      color: white;
-      font-family:'0xProto', monospace;
-    }
-    
-  hr {
-      color: var(--lightblue);
-      width:100%;
-      margin: 1em 0em 1em;
+    ::selection {
+        background: var(--blue);
+        color: var(--dark);
     }
 
-  header {
-    position: relative;
-  }
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: var(--dark);
+        color: white;
+    }
 
-  footer {
-    text-align: center;
-  }
+    h1 {
+        font-size: 2.125em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+    }
+
+    p {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    b {
+        color: var(--bold);
+        font-weight: 700;
+    }
+
+    header {
+        padding-top: 5.5vh;
+    }
+
+    h4,
+    a {
+        color: var(--pink);
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    pre {
+        color: white;
+        font-family: "0xProto", monospace;
+    }
+
+    hr {
+        color: var(--lightblue);
+        width: 100%;
+        margin: 1em 0em 1em;
+    }
+
+    header {
+        position: relative;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    @media screen and (width < 640px) {
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+@layer components {
+    h1 {
+        @apply text-2xl transition-all duration-300 md:text-3xl;
+    }
+    h2 {
+        @apply text-xl transition-all duration-300 md:text-2xl;
+    }
 }

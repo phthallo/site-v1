@@ -1,24 +1,27 @@
 ---
-const url = new URL(Astro.url.pathname, Astro.site)
-const link = ((url.pathname.split("/")).filter(i => i))
+const url = new URL(Astro.url.pathname, Astro.site);
+const link = url.pathname.split("/").filter((i) => i);
 ---
+
 <header>
-{link ? 
+    <!-- prettier-ignore -->
     <div id = "navigation" class = "mb-3">
         ~/ <a class = "no-underline" href = "/">home</a>
-        {link.map((data) => <span> / <a class = "no-underline" href = {`/${data}`}> {data}</a></span>)}   
-    </div> : null}
-<h1>Hi, I'm Annabel.</h1> 
-<hr>
-<div class = "flex justify-between flex-col sm:flex-row transition-all duration-300 leading-5">
-    <div>
-        <b><i class="mr-2 fa-regular fa-envelope"></i>contact<span class="fa-solid fa-sm fa-at" title = "@"></span>phthallo.com</b><br>
-        <b><a class = "text-palette-800" href = "https://github.com/phthallo"><i class="mr-2 fa-brands fa-github"></i>@phthallo</b></a>
+        { link ? 
+        <span> { link.map((data) => <span> / <a class = "no-underline" href = {`/${data}`}> {data}</a></span>) }   
+        </span> : null}
     </div>
-    <div>
-        <b><a class = "text-palette-800" href = "https://linkedin.com/in/annabelquach"><i class="mr-2 fa-brands fa-linkedin"></i>annabelquach</b></a><br>
-        <b><i class="mr-2 fa-brands fa-github"></i>@phthallo</b>
+    <h1>Hi, I'm Annabel.</h1>
+    <hr />
+    <div class="flex flex-col justify-between text-sm leading-5 transition-all duration-300 sm:flex-row sm:text-base">
+        <div>
+            <b><i class="fa-regular fa-envelope mr-2"></i>contact<span class="fa-solid fa-sm fa-at" title="@"></span>phthallo.com</b><br />
+            <b><a class="text-palette-800" href="https://github.com/phthallo"><i class="fa-brands fa-github mr-2"></i>@phthallo</a></b>
+        </div>
+        <div>
+            <b><a class="text-palette-800" href="https://linkedin.com/in/annabelquach"><i class="fa-brands fa-linkedin mr-2"></i>annabelquach</a></b><br />
+            <b><i class="fa-brands fa-github mr-2"></i>@phthallo</b>
+        </div>
     </div>
-</div>
-<hr>
+    <hr />
 </header>

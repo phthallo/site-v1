@@ -1,59 +1,28 @@
 ---
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import '../styles/global.css'
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang = "en">
-	<head>
-		<title>{title} - annabel</title>
-		<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, resizes-content">
-        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+<html lang="en">
+    <head>
+        <title>{title} - annabel</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, resizes-content" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
         <script src="https://kit.fontawesome.com/810dc5760a.js" crossorigin="anonymous"></script>
-	</head>
-	<body class = "bg-palette-700 bg-[url('/public/topography.svg')] z-1 h-full overflow-y-scroll pt-0 m-0 min-h-screen text-white font-proto">
-		<div id = "primary" class = "px-8 pt-2 m-auto z-2 grid min-h-screen w-11/12 lg:w-3/4 transition-all duration-300" style="grid-template-rows: auto 1fr auto">
-			<Header/>
-			<slot />
-			<Footer />
-		</div>
-	</body>
+    </head>
+    <body class="z-1 m-0 h-full min-h-screen overflow-y-scroll bg-palette-700 bg-[url('/topography.svg')] pt-0 font-proto text-white">
+        <div id="primary" class="z-2 m-auto grid min-h-screen w-11/12 px-8 pt-2 transition-all duration-300 lg:w-3/4" style="grid-template-rows: auto 1fr auto">
+            <Header />
+            <slot />
+            <Footer />
+        </div>
+    </body>
 </html>
-
-
-
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>

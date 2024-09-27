@@ -1,30 +1,37 @@
 ---
 interface Props {
-	name: string;
-	url: string;
-	repo: string;
-	description: string;
-	tools: Array<any>;
+    name: string;
+    url: string;
+    repo: string;
+    description: string;
+    tools: Array<any>;
 }
 
 const { name, url, repo, description, tools } = Astro.props;
 ---
+<div class="relative flex h-fit flex-col overflow-auto rounded-lg bg-palette-900 p-4 lg:h-56">
+    <a class="no-underline text-sm sm:text-base transition-all duration-300" href={url}>{name}</a>
+    <div class="absolute right-4">
+        <a href={repo}><i class="fa-brands fa-github"></i></a>
+        <a href={url}>
+            <i class="fa-solid fa-sm fa-arrow-up-right-from-square"></i>
+        </a>
+    </div>
 
-<div class = "p-4 h-fit lg:h-56 rounded-lg bg-palette-900 overflow-auto flex flex-col relative"> 
-	<a class= "no-underline" href = {url}>{name}</a>
-	<div class = "absolute right-4">
-		<a href = {repo}><i class="fa-brands fa-github"></i></a>
-		<a href = {url}><i class="fa-solid fa-sm fa-arrow-up-right-from-square"></i></a>
-	</div>
+    <div class="grow">
+        <p>{description}</p>
+    </div>
 
-
-	<div class = "grow">
-	<p>{description}</p>
-	</div>
-
-	<div class = "mt-auto bottom-0">
-		{tools.map((tools) => (
-			<span class = "bg-palette-600 max-h-8 inline-block text-palette-900 font-bold rounded-lg p-1 my-1 mr-2 ml-0"><i class = {`${tools.icon} mr-2`}></i>{tools.name}</span> 
-	  	))}
-	</div>
+    <div class="bottom-0 mt-auto">
+        {
+            tools.map((tools) => (
+                <span class="text-sm sm:text-base transition-all duration-300 my-1 ml-0 mr-2 inline-block max-h-8 rounded-lg bg-palette-600 p-1 font-bold text-palette-900">
+					<!-- prettier-ignore -->
+					<i class={`${tools.icon} mr-1`} />{tools.name}
+                </span>
+            ))
+        }
+    </div>
 </div>
+
+

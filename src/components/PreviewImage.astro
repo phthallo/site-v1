@@ -4,7 +4,7 @@ interface Props {
     altText: string;
 }
 
-const { image, altText } = Astro.props
+const { image, altText } = Astro.props;
 ---
 
-<img class = "block m-auto w-full my-4 rounded-2xl opacity-80 transition-all duration-300 hover:opacity-100" src = {image} alt = {altText}></img>
+<img class="m-auto my-4 block h-72 w-full rounded-2xl object-cover opacity-80 transition-all duration-300 hover:opacity-100" src={image} alt={altText} />

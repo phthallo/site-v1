@@ -19,6 +19,4 @@ jobs:
           script: |
             cd ${{ secrets.DIRECTORY }}            
             git pull
-          if: ${{ env.deployscript }}
-          run: |
-            /usr/bin/bash -l ${{ env.deployscript }}
+            npm run build

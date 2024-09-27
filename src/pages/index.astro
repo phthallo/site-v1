@@ -4,6 +4,7 @@ import Card from '../components/Card.astro';
 import PreviewImage from "../components/PreviewImage.astro";
 import Columns from "../components/Columns.astro";
 import projects from '../data/projects.json';
+const displayProjects = projects.slice(0,4)
 ---
 
 <Layout title="home">
@@ -13,7 +14,7 @@ import projects from '../data/projects.json';
 		<PreviewImage image = "/paint.png" altText = "The map 'Paint' from the Celeste Strawberry Jam Collab."></PreviewImage>
 		<h2>my projects</h2>
 		<Columns>
-				{projects.map(({ name, url, repo, description, tools }) => (
+				{displayProjects.map(({ name, url, repo, description, tools }) => (
 				<Card name = {name}, url={url}, repo={repo}, description={description}, tools={tools}/>))}
 		</Columns>
 		</div>

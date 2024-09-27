@@ -5,9 +5,9 @@
         "repo": "https://github.com/phthallo/terminal-website",
         "description": "An interactive, functional Linux terminal themed portfolio website, complete with commands.",
         "tools": [
-            {"name": "Javascript", "icon": "icon devicon-javascript-plain"},
-            {"name": "HTML", "icon": "icon devicon-html5-plain"},
-            {"name": "CSS", "icon": "icon devicon-css3-plain"}
+            { "name": "Javascript", "icon": "icon devicon-javascript-plain" },
+            { "name": "HTML", "icon": "icon devicon-html5-plain" },
+            { "name": "CSS", "icon": "icon devicon-css3-plain" }
         ]
     },
     {
@@ -15,9 +15,7 @@
         "url": "https://pypi.org/project/pyflagoras/",
         "repo": "https://github.com/phthallo/pyflagoras",
         "description": "Python CLI for theming SVG files from images.",
-        "tools": [
-            {"name": "Python", "icon": "icon devicon-python-plain"}
-        ]
+        "tools": [{ "name": "Python", "icon": "icon devicon-python-plain" }]
     },
     {
         "name": "Arduinooo",
@@ -25,8 +23,8 @@
         "repo": "https://github.com/phthallo/arduinooo",
         "description": "Archive of Our Own fanwork renderer for the Arduino Uno microcontroller.",
         "tools": [
-            {"name": "Processing", "icon": "icon devicon-processing-plain"},
-            {"name": "Arduino", "icon": "icon devicon-arduino-plain"}
+            { "name": "Processing", "icon": "icon devicon-processing-plain" },
+            { "name": "Arduino", "icon": "icon devicon-arduino-plain" }
         ]
     },
     {
@@ -34,8 +32,6 @@
         "url": "https://gallery.phthallo.com",
         "repo": "https://github.com/phthallo/gallery",
         "description": "A work-in-progress gallery for photos from Hack Club events, using Ruby on Rails.",
-        "tools": [
-            {"name": "Rails", "icon": "icon devicon-rails-plain"}
-        ]
+        "tools": [{ "name": "Rails", "icon": "icon devicon-rails-plain" }]
     }
 ]

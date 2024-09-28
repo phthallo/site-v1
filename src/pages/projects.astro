@@ -8,9 +8,11 @@ import projects from "../data/projects.json";
 <Layout title="projects">
     <main>
         <h2>my projects</h2>
+		<p>disclaimer: presented in no particular order</p>
 		<Columns>
-				{projects.map(({ name, url, repo, description, tools }) => (
-				<Card name = {name}, url={url}, repo={repo}, description={description}, tools={tools}/>))}
+				{projects.map(({ name, url, repo, image, description, tools }) => (
+				<Card name = {name}, url={url}, repo={repo}, image={image} description={description}, tools={tools}/>))}
 		</Columns>
+		<p>you may also wish to view my occassional contributions to <a href = "https://github.com/pulls?q=is%3Apr+author%3Aphthallo+archived%3Afalse+">other open-source repositories</a>.</p>
     </main>
 </Layout>

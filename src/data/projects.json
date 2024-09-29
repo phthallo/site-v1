@@ -3,7 +3,7 @@
         "name": "Terminal Portfolio",
         "url": "https://terminal.phthallo.com",
         "repo": "https://github.com/phthallo/terminal-website",
-        "image": "/projects/project-terminalwebsite.png",
+        "image": "/projects/project-terminalwebsite.jpg",
         "description": "An interactive, functional Linux terminal themed portfolio website, complete with commands.",
         "tools": [
             { "name": "Javascript", "icon": "devicon-javascript-plain" },
@@ -15,7 +15,7 @@
         "name": "Pyflagoras",
         "url": "https://pypi.org/project/pyflagoras/",
         "repo": "https://github.com/phthallo/pyflagoras",
-        "image": "/projects/project-pyflagoras.png",
+        "image": "/projects/project-pyflagoras.jpg",
         "description": "Python CLI for theming SVG files from images.",
         "tools": [{ "name": "Python", "icon": "devicon-python-plain" }]
     },
@@ -23,7 +23,7 @@
         "name": "Arduinooo",
         "url": "https://github.com/phthallo/arduinooo",
         "repo": "https://github.com/phthallo/arduinooo",
-        "image": "/projects/project-arduinooo.png",
+        "image": "/projects/project-arduinooo.jpg",
         "description": "Archive of Our Own fanwork renderer for the Arduino Uno microcontroller.",
         "tools": [
             { "name": "Processing", "icon": "devicon-processing-plain" },
@@ -34,7 +34,7 @@
         "name": "Gallery",
         "url": "https://gallery.phthallo.com",
         "repo": "https://github.com/phthallo/gallery",
-        "image": "/projects/project-gallery2.png",
+        "image": "/projects/project-gallery2.jpg",
         "description": "A work-in-progress gallery for photos from Hack Club events, using Ruby on Rails.",
         "tools": [{ "name": "Rails", "icon": "devicon-rails-plain" }]
     },
@@ -50,7 +50,7 @@
         "name": "Buzzly.Art Codes",
         "url": "https://github.com/phthallo/buzzlycodes",
         "repo": "https://github.com/phthallo/buzzlycodes",
-        "image": "/projects/project-buzzlycodes.png",
+        "image": "/projects/project-buzzlycodes.jpg",
         "description": "Assorted profile widgets written for art website Buzzly.art.",
         "tools": [{ "name": "TailwindCSS", "icon": "devicon-tailwindcss-original" }]
     },
@@ -58,7 +58,7 @@
         "name": "phthallo.com",
         "url": "https://phthallo.com",
         "repo": "https://github.com/phthallo/site-v1",
-        "image": "/projects/project-sitev1.png",
+        "image": "/projects/project-sitev1.jpg",
         "description": "This website!",
         "tools": [{ "name": "Astro", "icon": "devicon-astro-plain" }, { "name": "TailwindCSS", "icon": "devicon-tailwindcss-original" }]
     },
@@ -66,7 +66,7 @@
         "name": "Toyhou.se API",
         "url": "https://pypi.org/project/toyhouse",
         "repo": "https://github.com/phthallo/toyhouse-data",
-        "image": "/projects/project-toyhouse.png",
+        "image": "/projects/project-toyhouse.jpg",
         "description": "API wrapper for worldbuilding website Toyhou.se.",
         "tools": [{ "name": "Python", "icon": "devicon-python-plain" }]
     },
@@ -74,7 +74,7 @@
         "name": "Discord Quotebot",
         "url": "https://github.com/phthallo/quotebot",
         "repo": "https://github.com/phthallo/quotebot",
-        "image": "/projects/project-bot.png",
+        "image": "/projects/project-bot.jpg",
         "description": "Discord bot for recording and recalling memorable quotes.",
         "tools": [{ "name": "Python", "icon": "devicon-python-plain" }, { "name": "Discord.py", "icon": "devicon-python-plain" }]
     },
@@ -98,7 +98,7 @@
         "name": "Hallowed Knight",
         "url": "https://sprig.hackclub.com/gallery/hallowed_knight",
         "repo": "https://github.com/phthallo/hallowedknight",
-        "image": "/projects/project-hallowedknight.png",
+        "image": "/projects/project-hallowedknight.jpg",
         "description": "A Hollow Knight inspired game coded using the Sprig game engine.",
         "tools": [{ "name": "Javascript", "icon": "devicon-javascript-plain" }]
     }

@@ -11,13 +11,13 @@ interface Props {
 const { name, url, repo, image, description, tools } = Astro.props;
 ---
 <div class="relative flex flex-col overflow-auto rounded-lg bg-palette-900 lg:h-68">
-    { image ? <img class = "w-full h-36 object-cover" src = {image}/> : null }
+    { image ? <img loading="lazy" class = "w-full h-36 object-cover" src = {image} alt={description}/> : null }
     <div class = "p-4 h-full flex flex-col">
         <a class="no-underline text-sm sm:text-base transition-all duration-300" href={url}>{name}</a>
         <span class="absolute right-4">
-            <a href={repo}><i class="fa-brands fa-github"></i></a>
-            <a href={url}>
-                <i class="fa-solid fa-sm fa-arrow-up-right-from-square"></i>
+            <a href={repo} aria-label=`Visit the GitHub repository for ${name}`><i class="fa-brands fa-lg fa-github"></i></a>
+            <a href={url} aria-label=`Vsiit the external site for ${name}`>
+                <i class="fa-solid fa-lg fa-arrow-up-right-from-square"></i>
             </a>
         </span>
 

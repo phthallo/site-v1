@@ -1,0 +1,69 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?3yingd');
+  src:  url('../fonts/icomoon.eot?3yingd#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?3yingd') format('truetype'),
+    url('../fonts/icomoon.woff?3yingd') format('woff'),
+    url('../fonts/icomoon.svg?3yingd#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-astro:before {
+  content: "\e909";
+}
+.icon-css3:before {
+  content: "\e907";
+}
+.icon-rust:before {
+  content: "\e906";
+}
+.icon-arduino:before {
+  content: "\e900";
+}
+.icon-tailwindcss:before {
+  content: "\e901";
+}
+.icon-javascript:before {
+  content: "\e902";
+}
+.icon-python:before {
+  content: "\e903";
+}
+.icon-rails:before {
+  content: "\e904";
+}
+.icon-at:before {
+  content: "\e908";
+}
+.icon-envelope:before {
+  content: "\e905";
+}
+.icon-link:before {
+  content: "\e9cb";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+.icon-linkedin:before {
+  content: "\eac9";
+}
+.icon-html5:before {
+  content: "\eae4";
+}

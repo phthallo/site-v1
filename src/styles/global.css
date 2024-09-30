@@ -83,6 +83,15 @@
         text-align: center;
     }
 
+    [class^="icon-"], [class*=" icon-"] {
+    text-decoration: none;
+    }
+
+    .icon {
+            text-decoration: none;
+    }
+
+
     @media screen and (width < 640px) {
         p {
             font-size: 14px;

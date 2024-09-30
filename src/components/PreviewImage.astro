@@ -1,10 +1,14 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
 interface Props {
     image: string;
     altText: string;
 }
 
 const { image, altText } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
 ---
 
-<img class="m-auto my-4 block h-72 w-full rounded-2xl object-cover opacity-80 transition-all duration-300 hover:opacity-100" src={image} alt={altText} />
+<Image src = {images[image]()} alt={altText} class="m-auto my-4 block h-72 w-full rounded-2xl object-cover opacity-80 transition-all duration-300 hover:opacity-100" />

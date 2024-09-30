@@ -10,14 +10,14 @@ const displayProjects = projects.slice(0,4)
 <Layout title="home">
 	<main>
 		<p>i go by <b>phthallo</b> (<i>phay-low</i> or <i>thay-low</i>, i don't really mind) everywhere online. i am a 16 year old programmer and high school student from australia.</p>
-		<p>read more about me <a href = "/about" aria-label="Visit the About page">here</a>, or see all of my projects <a href = "/projects" aria-label="Visit the Projects page">here</a>.</p>
+		<p>read more <a href = "/about" aria-label="Visit the About page">about me</a>, or see the <a href = "/projects" aria-label="Visit the Projects page">projects</a> i've been working on.</p>
 		<PreviewImage image = "/paint.jpg" altText = "The map 'Paint' from the Celeste Strawberry Jam Collab."></PreviewImage>
 		<h2>showcase</h2>
 		<Columns>
 				{displayProjects.map(({ name, url, repo, image, description, tools }) => (
 				<Card name = {name}, url={url}, repo={repo}, image = {image}, description={description}, tools={tools}/>))}
 		</Columns>
-		<p class = "text-center">see more projects <a href = "/projects" aria-label="Visit the Projects page">here</a></p>
+		<p class = "text-center"><a href = "/projects" aria-label="Visit the Projects page">see more projects</a></p>
 		</div>
 	</div>
 	</main>

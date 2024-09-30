@@ -16,7 +16,7 @@
         "url": "https://pypi.org/project/pyflagoras/",
         "repo": "https://github.com/phthallo/pyflagoras",
         "image": "/projects/project-pyflagoras.jpg",
-        "description": "Python CLI for theming SVG files from images.",
+        "description": "Installable Python package and CLI for theming SVG files using user-provided images.",
         "tools": [{ "name": "Python", "icon": "icon-python" }]
     },
     {
@@ -43,7 +43,7 @@
         "url": "https://github.com/phthallo/chillist",
         "repo": "https://github.com/phthallo/chillist",
         "image": "/projects/project-chillist.gif",
-        "description": "An aesthetic hand-drawn productivity and task management app.",
+        "description": "An aesthetic hand-drawn productivity and task management app ft. Pomodoro timer and music player.",
         "tools": [{ "name": "Python", "icon": "icon-python" }]
     },
     {
@@ -51,7 +51,7 @@
         "url": "https://github.com/phthallo/buzzlycodes",
         "repo": "https://github.com/phthallo/buzzlycodes",
         "image": "/projects/project-buzzlycodes.jpg",
-        "description": "Assorted profile widgets written for art website Buzzly.art.",
+        "description": "Assorted profile and character widgets written for users of art website Buzzly.art.",
         "tools": [{ "name": "TailwindCSS", "icon": "icon-tailwindcss" }]
     },
     {
@@ -59,7 +59,7 @@
         "url": "https://phthallo.com",
         "repo": "https://github.com/phthallo/site-v1",
         "image": "/projects/project-sitev1.jpg",
-        "description": "This website!",
+        "description": "This website! Iteration ??? of my personal website, with a responsive, mobile-friendly design.",
         "tools": [{ "name": "Astro", "icon": "icon-astro" }, { "name": "TailwindCSS", "icon": "icon-tailwindcss" }]
     },
     {
@@ -67,7 +67,7 @@
         "url": "https://pypi.org/project/toyhouse",
         "repo": "https://github.com/phthallo/toyhouse-data",
         "image": "/projects/project-toyhouse.jpg",
-        "description": "API wrapper for worldbuilding website Toyhou.se.",
+        "description": "API wrapper for worldbuilding website Toyhou.se, with support for user, character and forum data.",
         "tools": [{ "name": "Python", "icon": "icon-python" }]
     },
     {
@@ -75,7 +75,7 @@
         "url": "https://github.com/phthallo/quotebot",
         "repo": "https://github.com/phthallo/quotebot",
         "image": "/projects/project-bot.jpg",
-        "description": "Discord bot for recording and recalling memorable quotes.",
+        "description": "Discord bot for recording and recalling memorable quotes. Inspired by Twitch's Streamer.bot.",
         "tools": [{ "name": "Python", "icon": "icon-python" }, { "name": "Discord.py", "icon": "icon-python" }]
     },
     {
@@ -91,7 +91,7 @@
         "url": "https://github.com/phthallo/ao3downloader",
         "repo": "https://github.com/phthallo/ao3downloader",
         "image": "/projects/project-ao3download.gif",
-        "description": "CLI wrapper for downloading fanworks using the unofficial AO3 API.",
+        "description": "CLI for downloading fanworks in bulk from user bookmarks or a user-provided list, using the unofficial AO3 API.",
         "tools": [{ "name": "Python", "icon": "icon-python" }]
     },
     {

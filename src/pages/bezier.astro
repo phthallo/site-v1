@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Columns from '../components/Columns.astro';
+
+const params = [
+    {id: "P0", text: "Start Point"},
+    {id: "P3", text: "End Point"},
+    {id: "P1", text: "Control Point (I)"},
+    {id: "P2", text: "Control Point (II)"}
+]
+
+---
+
+<Layout title="Bezier Curves">
+    <main>
+        <script is:inline>
+            function store(){
+                for (let i = 0; i <= 3; i++){
+                    let val = (document.getElementById(`P${i}`)).value;
+                    let value = (val.substr(1, val.length-2)).split(", ");
+                    localStorage.setItem(`P${i}`, JSON.stringify(value));
+                }
+                calculate();
+            }
+            function calculate(){
+                let [x0, y0] = (JSON.parse(localStorage.getItem("P0"))).map(Number);
+                let [x1, y1] = (JSON.parse(localStorage.getItem("P1"))).map(Number);
+                let [x2, y2] = (JSON.parse(localStorage.getItem("P2"))).map(Number);
+                let [x3, y3] = (JSON.parse(localStorage.getItem("P3"))).map(Number);
+                const result = document.querySelector(".result");
+                result.innerHTML = `
+                x(t) = ${x3-3*x2+3*x1-x0}t<sup>3</sup> + ${3*x2-6*x1+3*x0}t<sup>2</sup> + ${3*x1-3*x0}t + ${x0}
+                <br>
+                y(t) = ${y3-3*y2+3*y1-y0}t<sup>3</sup> + ${3*y2-6*y1+3*y0}t<sup>2</sup> + ${3*y1-3*y0}t + ${y0}
+                `
+            }
+        </script>
+
+        <h2 class = "mt-0">Bezier Curve Calculator</h2>
+        <p>Outputs the parametric equations of a Bezier curve given a start point, end point and two control points.
+            <ul class = "list-disc list-inside">
+                <li>Enter all points in the form <code>(x, y)</code></li>
+                <li>Warning: no input validation is performed on the points. If you get NaN (not a number), you probably did something wrong.</li>
+                <li>Works with floating point and negative numbers! (Resulting equation may be rounded weirdly)</li>
+            </ul>
+        </p>
+        <form id = "calculator" onsubmit="store(); return false" class = "text-palette-700 mt-4 dark:text-white">
+            <Columns>
+            {params.map(param =>  
+                <span >
+                    <b><label for={param.id}>{param.text}:</label></b>
+                    <input class = "w-full p-2 my-2 rounded-md focus:outline-none" type="text" id={param.id} name={param.id}>
+                </span>
+            )}
+            </Columns>
+            <b><input class = "my-4" type="submit" value="Submit"></b>
+          </form> 
+        <p class = "result"></p>
+
+    </main>
+</Layout>

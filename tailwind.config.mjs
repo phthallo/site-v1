@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+	darkMode: ['class', '[data-theme="dark"]'],
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		fontFamily: {
@@ -17,8 +18,15 @@ export default {
 					600: '#cad5db',
 					700: '#120f19',
 					800: '#947b82',
-					900: '#201d29'
-				}
+					900: '#201d29',
+
+				},
+			light: {
+				50: '#947b82',
+				100: '#ded9e3',
+				200: '#c3b8c1',
+			}
+
 			},
 		},
 	},

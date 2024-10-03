@@ -1,5 +1,6 @@
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 @layer base {
     @font-face {
@@ -55,11 +56,6 @@
         padding-top: 5.5vh;
     }
 
-    h4,
-    a {
-        color: var(--pink);
-    }
-
     a {
         text-decoration: underline;
     }
@@ -67,12 +63,6 @@
     pre {
         color: white;
         font-family: "0xProto", monospace;
-    }
-
-    hr {
-        color: var(--lightblue);
-        width: 100%;
-        margin: 1em 0em 1em;
     }
 
     header {
@@ -101,9 +91,26 @@
 
 @layer components {
     h1 {
-        @apply text-2xl transition-all duration-300 md:text-3xl;
+        @apply text-2xl transition-all duration-300 md:text-3xl text-palette-900 dark:text-white;
     }
     h2 {
         @apply text-xl transition-all duration-300 md:text-2xl;
     }
+
+    hr {
+        @apply w-full h-[1.25px] my-4 bg-palette-700 dark:bg-white;
+    }
+
+    p, ul {
+        @apply text-black dark:text-white;
+    }
+
+    h2, h4, a, b {
+        @apply text-light-50 dark:text-palette-300 
+    }
+    
+    body, body * {
+        @apply transition-colors duration-200;
+    }
+
 }

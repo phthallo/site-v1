@@ -1,0 +1,26 @@
+---
+
+--- 
+
+<script is:inline>
+    var lightMode = document.documentElement.attributes.getNamedItem("data-theme")?.value == "light";
+    // Fall back on localStorage to get theme details, as lightMode @ initial render is always undefined.
+    lightMode = lightMode ? lightMode : (localStorage.getItem("theme") == "light")
+    document.addEventListener("DOMContentLoaded", function() {
+        const icon = document.getElementById('toggleIcon');
+        icon.className = (lightMode) ? "icon-moon" : "icon-sun";
+    });
+    function setTheme() {
+        document.dispatchEvent(
+            new CustomEvent("set-theme", { detail: lightMode ? "dark" : "light" })
+        );
+        lightMode = !lightMode;
+        const icon = document.getElementById('toggleIcon');
+        icon.className = (lightMode) ? "icon-moon" : "icon-sun";
+    }
+</script>
+
+<button class = "absolute right-0 h-7 w-7 md:h-8 md:w-8 rounded-md transition-all duration-200" onclick = setTheme()>
+    <i id="toggleIcon" class=""></i>
+</button>
+

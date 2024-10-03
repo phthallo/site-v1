@@ -15,17 +15,17 @@ const { name, url, repo, image, description, tools } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*/*.{jpeg,jpg,png,gif}')
 ---
 
-<div class="relative flex flex-col overflow-auto rounded-lg bg-palette-900">
+<div class="relative flex flex-col overflow-auto rounded-lg bg-light-100 dark:bg-palette-900">
     { image ? <Image src = {images[image]()} alt={description} class="w-full h-36 object-cover" /> : null}
     <div class = "p-4 h-full flex flex-col">
-        <a class="no-underline text-sm sm:text-base transition-all duration-300" href={url}>{name}</a>
+        <a class="no-underline text-sm sm:text-base transition-all duration-300 font-bold" href={url}>{name}</a>
         <div class="grow">
             <p>{description}</p>
         </div>
         <div>
         {
             tools.map((tools) => (
-                <span class="text-sm sm:text-base transition-all duration-300 my-1 ml-0 mr-2 inline-block max-h-8 rounded-lg bg-palette-600 p-1 font-bold text-palette-900">
+                <span class="text-sm sm:text-base transition-all duration-300 my-1 ml-0 mr-2 inline-block max-h-8 rounded-lg bg-light-200 text-white dark:bg-palette-600 p-1 dark:text-palette-900">
                     <!-- prettier-ignore -->
                     <i class={`${tools.icon} mr-1`} />{tools.name}
                 </span>
@@ -33,7 +33,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*/*.{jp
         }
         </div>
         <hr>
-        <div class="bottom-0 mt-auto text-sm sm:text-base">
+        <div class="bottom-0 mt-auto text-sm sm:text-base font-bold">
             <a class = "icon float-left" href={repo} aria-label=`Visit the GitHub repository for ${name}`><i class="icon-github mr-2"></i>view source</a>
             <a class = "icon float-right" href={url} aria-label=`Visit the external site for ${name}`>
                 <i class="icon-link mr-2 "></i>visit

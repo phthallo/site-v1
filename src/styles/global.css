@@ -83,7 +83,7 @@
 
 
     @media screen and (width < 640px) {
-        p {
+        p, ul {
             font-size: 14px;
         }
     }
@@ -101,8 +101,12 @@
         @apply w-full h-[1.25px] my-4 bg-palette-700 dark:bg-white;
     }
 
-    p, ul {
+    p, ul, span, div {
         @apply text-black dark:text-white;
+    }
+
+    h2 {
+        @apply mt-0
     }
 
     h2, h4, a, b {
@@ -110,7 +114,11 @@
     }
     
     body, body * {
-        @apply transition-colors duration-200;
+        @apply transition-colors duration-100;
+    }
+
+    input {
+        @apply my-4 bg-white p-2 font-normal rounded-md dark:bg-palette-900
     }
 
 }

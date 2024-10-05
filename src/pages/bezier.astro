@@ -3,10 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Columns from '../components/Columns.astro';
 
 const params = [
-    {id: "P0", text: "Start Point"},
-    {id: "P3", text: "End Point"},
-    {id: "P1", text: "Control Point (I)"},
-    {id: "P2", text: "Control Point (II)"}
+    {id: "P0", text: "Start Point (x, y, z)"},
+    {id: "P3", text: "End Point (x, y, z)"},
+    {id: "P1", text: "Control Point (I) (x, y)"},
+    {id: "P2", text: "Control Point (II) (x, y)"}
 ]
 
 ---
@@ -15,12 +15,13 @@ const params = [
     <main>
         <script is:inline src="/scripts/Bezier.js" defer></script>
         <h2>Bezier Curve Calculator</h2>
-        <p>Outputs the parametric equations of a Bezier curve given a start point, end point and two control points.
+        <p>Outputs the parametric equations of a Bezier curve that:
             <ul class = "list-disc list-inside">
-                <li>Enter points in the form <code>(x, y)</code></li>
-                <li>Warning: no input validation is performed on your input.</li>
-                <li>Works with floating point and negative numbers!</li>
-                <li>The final equations will round all digits to three decimal places.</li>
+                <li>begins at start point <code>(x<sub>0</sub>, y<sub>0</sub>, z<sub>0</sub>)</code></li>
+                <li>is guided by control points <code>(x<sub>1</sub>, y<sub>1</sub>)</code> and <code>(x<sub>2</sub>, y<sub>2</sub>)</code>
+                <li>ends at <code>(x<sub>3</sub>, y<sub>3</sub>, z<sub>3</sub>)</code></li>
+                <li>has restriction <code>0≤t≤1</code></li>
+
             </ul>
         </p>
         <form id = "calculator" onsubmit="return false" class = "text-palette-700 mt-4 dark:text-white">
@@ -32,8 +33,10 @@ const params = [
                 </span>
             )}
             </Columns>
-            <b><input onclick=store() type="submit" value="Submit"></b>
-            <b><input onclick=resetForm("calculator") type="submit" value="Clear"></b>
+            <span>
+                <b><input onclick=store() type="submit" value="Submit"></b>
+                <b><input onclick=resetForm("calculator") type="submit" value="Clear"></b>
+            </span>
           </form> 
             <hr>
          <b class = "font-normal">Equations</b>

@@ -90,11 +90,12 @@
 }
 
 @layer components {
+
     h1 {
-        @apply text-2xl transition-all duration-300 md:text-3xl text-palette-900 dark:text-white;
+        @apply text-2xl transition-all duration-100 md:text-3xl text-palette-900 dark:text-white;
     }
     h2 {
-        @apply text-xl transition-all duration-300 md:text-2xl;
+        @apply text-xl transition-all duration-100 md:text-2xl;
     }
 
     hr {
@@ -113,9 +114,6 @@
         @apply text-light-50 dark:text-palette-300 
     }
     
-    body, body * {
-        @apply transition-colors duration-100;
-    }
 
     input {
         @apply my-4 bg-white p-2 font-normal rounded-md dark:bg-palette-900

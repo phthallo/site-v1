@@ -11,4 +11,6 @@ const { image, altText } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
 ---
 
-<Image src = {images[image]()} alt={altText} class="m-auto my-4 block h-72 w-full rounded-2xl object-cover opacity-80 transition-all duration-300 hover:opacity-100" />
+<span class = "relative flex items-center justify-center overflow-hidden shadow-xl h-72 my-4 w-full rounded-2xl">
+    <Image src = {images[image]()} alt={altText} class= "m-auto my-4 block rounded-2xl bg-cover h-72 object-cover opacity-100 transition-all duration-300 hover:scale-105" />
+</span>

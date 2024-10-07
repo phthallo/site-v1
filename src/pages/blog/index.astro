@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Columns from "../../components/Columns.astro";
+import Post from '../../components/Post.astro';
+const posts = await Astro.glob("../blog/*.mdx");
+---
+
+<Layout title="blog">
+    <main>
+        <body>
+            <h2>blog</h2>
+            <p>sometimes, i write!</p>
+            <Columns>
+                {posts.map(post => (
+                <Post 
+                    name = {post.frontmatter.title}, 
+                    url={post.url}, 
+                    image={post.frontmatter.image.url}, 
+                    description={post.frontmatter.description},
+                    date={(post.frontmatter.pubDate).toString().slice(0,10)}/>))}
+            </Columns>
+        </body>
+    </main>
+</Layout>

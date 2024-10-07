@@ -1,0 +1,29 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+    name: string;
+    url: string;
+    image: string;
+    description: string;
+    date: string;
+}
+
+const { name, url, image, description, date } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*/*.{jpeg,jpg,png,gif}')
+---
+
+<div class="relative flex flex-col overflow-auto rounded-lg bg-light-100 dark:bg-palette-900">
+    { image ? <Image src = {images[image]()} alt={description} class="w-full h-36 object-cover" /> : null}
+    <div class = "p-4 h-full flex flex-col">
+        <a class="no-underline text-sm sm:text-base transition-all duration-300 font-bold" href={url}>{name}</a>
+        <div class="grow">
+            <p>{description}</p>
+        </div>   
+        <hr>
+        <div class="bottom-0 mt-auto text-sm sm:text-base font-bold">
+            {date}
+        </div>
+     </div>
+</div>

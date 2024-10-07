@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { image, altText } = Astro.props;
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*/*.{jpeg,jpg,png,gif}');
 ---
 
 <span class = "relative flex items-center justify-center overflow-hidden shadow-xl h-72 my-4 w-full rounded-2xl">

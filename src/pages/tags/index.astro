@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Columns from '../../components/Columns.astro';
+const allPosts = await Astro.glob('../blog/*.mdx');
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+---
+<Layout title="tag index">
+    <div>
+        <h2>tag index</h2>
+        <p>beep boop. indexed {tags.length} tags!</p>
+        <Columns>
+            <ul class = "list-disc list-inside">
+            {tags.map((tag) => (
+                <li><a href={`/tags/${tag}`}>{tag}</a></li>
+            ))}
+            </ul>
+        </Columns>
+    </div>
+</Layout>

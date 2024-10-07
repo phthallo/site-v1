@@ -1,0 +1,18 @@
+---
+title: "blog post"
+pubDate: 2024-10-07
+description: "generic blog post description"
+image:
+    url: "/src/assets/blog/paint.jpg"
+    alt: "The map 'Paint' from the Celeste Strawberry Jam Collab."
+tags: ["programming", "webdev", "linux"]
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+<BlogLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.image.url} alt={frontmatter.image.alt} date={(frontmatter.pubDate).toString().slice(0,10)} tags={frontmatter.tags}>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tristique neque quis dui iaculis, a consectetur velit dignissim. Phasellus felis purus, fringilla accumsan arcu eget, accumsan lacinia libero. Curabitur odio eros, interdum non tincidunt ullamcorper, semper nec quam. Aenean sed nisl vel enim pulvinar porta fringilla convallis elit. Pellentesque sit amet turpis sed ex vehicula aliquam. Pellentesque et ultricies sem, vel volutpat risus. Proin fermentum sem ac quam consequat scelerisque. Proin nec pretium ex. Vestibulum varius ligula eu diam aliquet, non aliquam tellus scelerisque.
+
+Proin id accumsan augue, a sollicitudin eros. Nulla vel nisi neque. Fusce quis rutrum nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce ultrices mi pulvinar, sodales libero a, volutpat nunc. Sed a consectetur nibh. In metus felis, mattis vitae nulla non, volutpat pretium leo. Nullam tincidunt tortor quis metus pellentesque, in blandit urna ullamcorper. Ut id ultricies enim. Phasellus efficitur mauris quam, sit amet varius ipsum tincidunt id. Donec sed purus vestibulum, condimentum eros in, vulputate ante. Curabitur sodales interdum pharetra. 
+
+</BlogLayout>

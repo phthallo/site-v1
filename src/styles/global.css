@@ -38,7 +38,6 @@
 
     h2 {
         font-size: 1.4em;
-        margin-top: 0.83em;
         margin-bottom: 0.83em;
     }
 
@@ -95,26 +94,21 @@
         @apply text-2xl transition-all duration-100 md:text-3xl text-palette-900 dark:text-white;
     }
     h2 {
-        @apply text-xl transition-all duration-100 md:text-2xl;
+        @apply mt-0 text-xl transition-all duration-100 md:text-2xl;
     }
 
     hr {
         @apply w-full h-[1.25px] my-4 bg-palette-700 dark:bg-white;
     }
 
-    p, ul, span, div {
+    p, ul, span, div, pre {
         @apply text-black dark:text-white;
-    }
-
-    h2 {
-        @apply mt-0
     }
 
     h2, h4, a, b {
         @apply text-light-50 dark:text-palette-300 
     }
     
-
     input {
         @apply my-4 bg-white p-2 font-normal rounded-md dark:bg-palette-900
     }

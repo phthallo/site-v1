@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PreviewImage from "../components/PreviewImage.astro";
+
+interface Props {
+    title: string;
+    date: string;
+    image: string;
+    alt: string;
+    description: string;
+    tags: Array<any>;
+}
+
+const { title, date, image, alt, description, tags } = Astro.props;
+---
+
+<Layout title={title}>
+<h2>{title}</h2>
+<i><b>{date}</b> | {description}</i>
+<PreviewImage image = {image} altText = {alt}/>
+<span>
+    tags: { tags.map(tag => 
+    <a class="mr-2" href = {`/tags/${tag}`}>{tag}</a>
+    )}
+</span>
+</Layout>

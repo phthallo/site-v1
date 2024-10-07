@@ -10,8 +10,8 @@ const displayProjects = projects.slice(0,4)
 <Layout title="home">
 	<main>
 		<p>i go by <b>phthallo</b> (<i>phay-low</i> or <i>thay-low</i>, i don't really mind) everywhere online. i am a 16 year old programmer and high school student from australia.</p>
-		<p>read more <a href = "/about" aria-label="Visit the About page">about me</a>, the things <a href = "/place" aria-label="Visit the Place page">i do on the internet</a> or see the <a href = "/projects" aria-label="Visit the Projects page">projects</a> i've been working on.</p>
-		<PreviewImage image = "/src/assets/paint.jpg" altText = "The map 'Paint' from the Celeste Strawberry Jam Collab."></PreviewImage>
+		<p>read more <a href = "/about" aria-label="Visit the About page">about me</a>, the things <a href = "/place" aria-label="Visit the Place page">i do on the internet</a>, my <a href = "/blog" aria-label="Visit the Blog page">blog</a> or see the <a href = "/projects" aria-label="Visit the Projects page">projects</a> i've been working on.</p>
+		<PreviewImage image = "/src/assets/etc/paint.jpg" altText = "The map 'Paint' from the Celeste Strawberry Jam Collab."></PreviewImage>
 		<h2>showcase</h2>
 		<Columns>
 				{displayProjects.map(({ name, url, repo, image, description, tools }) => (

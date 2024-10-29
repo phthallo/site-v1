@@ -1,5 +1,5 @@
 # site-v1
-![image](https://cloud-7r4mkflwh-hack-club-bot.vercel.app/0image.png)
+![780shots_so](https://github.com/user-attachments/assets/62a3a78b-6546-40f8-90d5-be125bf547b9)
 
 Personal site/portfolio/blog, built with [Astro](https://astro.build/) and [Tailwind](https://tailwindcss.com/), and hosted on [Nest](https://hackclub.app/)! ft. two themes and a responsive, mobile-friendly design.
 

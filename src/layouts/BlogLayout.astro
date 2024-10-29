@@ -16,11 +16,13 @@ const { title, date, image, alt, description, tags } = Astro.props;
 
 <Layout title={title}>
 <h2>{title}</h2>
-<i><b>{date}</b> | {description}</i>
+<span><i><b>{date}</b> | {description}</i></span>
 <PreviewImage image = {image} altText = {alt}/>
 <span>
     tags: { tags.map(tag => 
     <a class="mr-2" href = {`/tags/${tag}`}>{tag}</a>
     )}
 </span>
+<hr>
+<slot/>
 </Layout>

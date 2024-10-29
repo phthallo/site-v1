@@ -1,0 +1,30 @@
+---
+title: "webbed site"
+pubDate: 2024-10-28
+description: "in which i yap about making websites"
+image:
+    url: "/src/assets/blog/paint.jpg"
+    alt: "The map 'Paint' from the Celeste Strawberry Jam Collab."
+tags: ["webdev"]
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import Timeline from "../../components/Timeline.astro";
+
+<BlogLayout 
+    title={frontmatter.title}
+    description={frontmatter.description} 
+    image={frontmatter.image.url} 
+    alt={frontmatter.image.alt} 
+    date={(frontmatter.pubDate).toString().slice(0,10)} 
+    tags={frontmatter.tags}>
+
+Contrary to the name of the [repo](https://github.com/phthallo/site-v1), this is not actually version one of my website. Here's a comprehensive timeline of my history with web development:
+<Timeline timeline={[
+    {"title": "fandom wiki shenanigans", "date": "June 2019", "desc": "I start off doing random HTML and CSS changes to personalise my profile on a short-lived Fandom Wiki, and apparently proclaim myself as 'that CSS Freak' (I do not remember doing this)." },
+    {"title": "???", "date": "???", "desc": "ā̶͇͖̼͈͎̩͇̯̫͙̖͛̽̓̅̽̊͒̏͝ä̸͍̦̺̬͓́̈́̏͋̐̏̊͠a̴̰̖̐̚a̷͙͂͒̒̆̋͐̑̓̕͝͝s̸̡͔̰͔̪͖̼̝͎͍̽͒s̶̛͕̍̋̀͐̽̀̈́̓̄̽à̸͕̈́́̏͗̽̇ḑ̵̦̭͉̘̪͖͚̗̓͠ś̶̞̠̌̓̃̔͊̌͐̽͝d̵͇̬̬̠͉̍̀̂͂̐͋̃͊̄͘͜a̷͚͈̣͚̺̳̩͐͑s̷̡̢̢̠̮̮̹͖̒̃͜a̸̢̦͈͚͆́̋̓̋̿̈͝a̸̡͓͉͎͙͖͎̥̝̫̒̄́̓̍ȧ̶̡̛̫͍̬͙͎̖͍̎̐̆̓̏̀͆͘͜͠ạ̴̛̽͋̋̈́̑̓̚̚͝ą̵͓́͜e̴̡̥̯̳͍̎̔̾̔̊͑͆̊̊̐͝ͅf̶̨̛͈͉̥͎̦̀̈͛̽̍̄͛d̴̩̮̜̀̈̓͌̈́ä̶̛̝͔͓̠́̾̆̌͘ͅắ̷̧̢͈͕͉̜̹̠̖͈͒̕͘e̷͕̺͇̮̣̭͇͍̠̗̋͛̽̑̿̆̍͗̈́̓́ͅȁ̶͉̈̾͗̆͝é̵̫̄f̶̫͍̤͖̙̊̑͜ͅd̸̢͚͚̀͑̃̍̐̇̈͛̏͜ś̸̡̭͗́͊̐͂͘͝ş̷̛̮̺̗͓̙̤̮̃͌͒̈́͛̊d̸̮̜̰͐̈̿̓f̸̟͙͇̦̹̝̣̤͑͐̅̒͜" },
+
+    {"title": "phthallo.com", "date": "September 2024", "desc": "You are here. Originally HTML + CSS, then ported to Astro, then TailwindCSS was added."}
+    ]}
+></Timeline>
+
+</BlogLayout>

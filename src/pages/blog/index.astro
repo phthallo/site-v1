@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Columns from "../../components/Columns.astro";
 import Post from '../../components/Post.astro';
 const posts = await Astro.glob("../blog/*.mdx");
+posts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
 ---
 
 <Layout title="blog">

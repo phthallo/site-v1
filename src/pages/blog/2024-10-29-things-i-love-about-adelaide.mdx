@@ -1,0 +1,34 @@
+---
+title: "things i love about adelaide"
+pubDate: 2024-10-29
+description: "i may complain about south australia a lot, but it's actually a pretty nice place."
+image:
+    url: "/src/assets/blog/coorong.jpg"
+    alt: "A sunset as seen from the banks of South Australia's Coorong River."
+tags: ["life"]
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import Timeline from "../../components/Timeline.astro";
+import SideImage from "../../components/SideImage.astro";
+
+<BlogLayout 
+    title={frontmatter.title}
+    description={frontmatter.description} 
+    image={frontmatter.image.url} 
+    alt={frontmatter.image.alt} 
+    date={(frontmatter.pubDate).toString().slice(0,10)} 
+    tags={frontmatter.tags}>
+<SideImage image = "/src/assets/blog/coorongday.jpg" altText="The Coorong, by day." position="left">
+- The beaches. I really like Hallett Cove.
+- [Mount Lofty Botanic Garden](https://www.botanicgardens.sa.gov.au/visit/mount-lofty-botanic-garden) and [Morialta Conservation Park](https://www.parks.sa.gov.au/parks/morialta-conservation-park), for a beautiful, scenic walk.
+- The [Adelaide Fringe](https://adelaidefringe.com.au/), the world's second largest arts festival.
+- Further south-east: the Coorong River (see images) and the caves of [Naracoorte National Park](https://www.naracoortecaves.sa.gov.au/). It's a long drive, but worth it.
+- The Mortlock Wing of South Australia's State Library.
+- Walking around the CBD, through buildings and warehouses, exploring the many exhibits of [Illuminate Adelaide](https://www.youtube.com/watch?v=UVGlv8MyG2c) 
+- Home of acclaimed indie game [Hollow Knight's developers!](https://www.teamcherry.com.au/)
+- The random sculptures which give Rundle Mall its personality (the Malls Balls [sic], the giant pigeon, and the bronze pigs™️)
+- Standing on the bridge over the Torrens River at Elder Park at sunset. 
+- [Hahndorf](https://hahndorfsa.org.au/) during autumn.
+- The Nan Hai Pu Tuo temple; a very serene Buddhist temple in Sellicks Hill which overlooks the coast. 
+</SideImage>
+</BlogLayout>

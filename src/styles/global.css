@@ -97,12 +97,24 @@
         @apply mt-0 text-xl transition-all duration-100 md:text-2xl;
     }
 
+    h3 {
+        @apply text-base transition-all duration-100 md:text-lg
+    }
+
     hr {
         @apply w-full h-[1.25px] my-4 bg-palette-700 dark:bg-white;
     }
 
     p, ul, span, div, pre {
         @apply text-black dark:text-white;
+    }
+    
+    ul {
+        @apply list-disc list-inside
+    }
+
+    li {
+        @apply my-1
     }
 
     h2, h4, a, b {

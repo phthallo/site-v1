@@ -24,7 +24,7 @@
             "description": "parametric equation generator for bezier curves of the third degree, given four control points."
         }]
     },
-    {"filter": "annabelquach.eu.org/*",
+    {"filter": "phthallo.github.io/*",
     "content": [
         {
             "name": "/",

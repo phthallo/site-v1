@@ -30,5 +30,5 @@ The final website is **static**, and as such, it can be built and deployed on an
 
 ### Notes
 - Blog posts are `.mdx` files and are located in `/src/pages/blog`.
-- Project data is stored in `src/data/projects.json`.
+- Project and other data is stored in `.json` files under `src/data/`. 
 - Images are stored in `src/assets`, which allows Astro to optimise them when building.

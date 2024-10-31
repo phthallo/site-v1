@@ -3,14 +3,14 @@ import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 
 interface Props {
-    image: string;
+    src: string;
     altText: string;
 }
 
-const { image, altText } = Astro.props;
+const { src, altText } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*/*.{jpeg,jpg,png,gif}');
 ---
 
 <span class = "relative flex items-center justify-center overflow-hidden shadow-xl h-72 my-4 w-full rounded-2xl">
-    <Image src = {images[image]()} alt={altText} title={altText} class= "m-auto my-4 block rounded-2xl bg-cover h-72 object-cover opacity-100 transition-all duration-300 hover:scale-105" />
+    <Image src = {images[src]()} alt={altText} title={altText} class= "m-auto my-4 block rounded-2xl bg-cover h-72 object-cover opacity-100 transition-all duration-300 hover:scale-105" />
 </span>

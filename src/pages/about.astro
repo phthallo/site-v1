@@ -2,13 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import Columns from "../components/Columns.astro";
 import PreviewImage from "../components/PreviewImage.astro";
+import Expand from "../components/Expand.astro";
 ---
 
 <Layout title="about">
     <main>
         <p>
-            hello! i'm a current year 12 student from <b>adelaide, australia</b>, graduating in november 2024. i was introduced to programming in my digital technologies class back in 2021 and have loved it ever since. since then, it's taken me to
-            melbourne, sydney and around the globe to vancouver, canada.
+            hello! i'm a current year 12 student from <b>adelaide, australia</b>, graduating in november 2024. i was introduced to programming in my digital technologies class back in 2021 and have loved it ever since. 
+            since then, it's taken me to melbourne, sydney, and across the globe to los angeles and vancouver. it's something that i find incredibly fulfilling.
         </p>
         <PreviewImage src = "/src/assets/etc/nitw.jpg" altText = "Mae from the video game Night in the Woods standing in a street"></PreviewImage>
         <p>
@@ -26,5 +27,15 @@ import PreviewImage from "../components/PreviewImage.astro";
         </p>
         <p>one of my dreams is to travel the world someday, because this earth is a vast and brilliant place and we're only alive for so long. but for now, you can find me in several online spaces, listed at the top of this page.</p>
         <p>if you want to chat, don't be afraid to get in touch.</p>
+        <div>
+            <Expand title = "webrings and buttons!">
+            <div slot = "content">
+                    <p class = "mt-0"><a href = "https://ring.nullp.tr">nullring</a></p>
+                    <iframe class="w-full md:h-16 h-max" style="color-scheme: normal;" src = "https://ring.nullp.tr/api/sites?type=html&style=display:flex;gap:12px;justify-content:normal;"></iframe>
+                    <p>go check them out :)</p>    
+                </div>
+            </Expand>
+        </div>
+
     </main>
 </Layout>

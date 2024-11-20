@@ -1,0 +1,16 @@
+---
+interface Props {
+    title: string
+}
+const { title } = Astro.props;
+
+---
+<section>
+    <label class="h-max">
+      <input class="peer/showLabel absolute scale-0" type="checkbox" />
+      <span class="block max-h-14 w-full overflow-hidden rounded-lg bg-light-100 px-4 dark:bg-palette-900 py-shadow-lg peer-checked/showLabel:max-h-fit">
+        <h3 class="flex h-14 cursor-pointer items-center font-bold">{title}</h3>
+        <slot class = "mb-2 overflow-auto" name="content" />
+      </span>
+    </label>
+  </section>

@@ -16,6 +16,10 @@
         {
             "name": "terminal.",
             "description": "linux terminal styled website. made during hack club's 2024 arcade event."
+        },
+        {
+            "name": "webring.",
+            "description": "central hub for the placeholder webring. 🫵 you can join it"
         }]
     },
     {"filter": "phthallo.com/*",

@@ -10,15 +10,15 @@ import thisplace from "../data/thisplace.json";
         <p>the font used is <a href = "https://github.com/0xType/0xProto">0xproto</a>.</p>
         <p>i used <a href = "https://github.com/alex-grover/astro-themes/">astro-themes</a> to implement an easy theme switcher, since i'm using tailwind.</p>
         <p>all of my websites, including this one, are hosted on <a href = "https://hackclub.app">nest</a>. i rather like <a href = "https://caddyserver.com/">caddy</a>, the web server which nest uses.</p>
-        <p>most of my development is done on windows, but i will switch to wsl when needed.</p>
-            <h2>my spaces on the internet</h2>
+        
+        <h2>my spaces on the internet</h2>
         <p>note: some pages may be down for maintenance or other reasons.</p>
         { thisplace.map(place => 
             <h4 class = "my-4 font-bold">{place.filter}</h4>
             <Columns>
                 {place.content.map(item => 
                 <div>
-                    <a href = {"https://"+(place.filter).replace("*", item.name)}><i class = "text-light-50 dark:text-palette-600">{item.name}</i></a>
+                    <a href = {"https://"+(place.filter).replace("*", item.name)}><i class = "">{item.name}</i></a>
                 </div>
                 <div>
                     {item.description}

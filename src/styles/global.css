@@ -118,11 +118,27 @@
     }
 
     h2, h4, a, b {
-        @apply text-light-50 dark:text-palette-300 
+        @apply text-light-300 dark:text-palette-300 
+    }
+
+    a {
+        @apply underline-offset-4 hover:no-underline hover:bg-palette-200 hover:dark:bg-palette-300 hover:dark:text-black
     }
     
     input {
         @apply my-4 bg-white p-2 font-normal rounded-md dark:bg-palette-900
     }
 
+}
+
+
+.footnotes {
+    margin: auto;
+    width: 91.667%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 5.5vh;
+    @media (width >= 64rem) { 
+        width: 50%;
+    }
 }

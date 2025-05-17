@@ -8,8 +8,8 @@ import projects from "../data/projects.json";
 <Layout title="projects">
     <main>
         <h2>my projects</h2>
-		<p>disclaimer: presented in no particular order</p>
-		<p>disclaimer 2: probably not up to date! check my <a href = "https://github.com/phthallo">github</a> for more</p>
+		<p>disclaimer 0: presented in no particular order</p>
+		<p>disclaimer 1: extremely out of date! check my <a href = "https://github.com/phthallo">github</a> for more</p>
 		<Columns>
 				{projects.map(({ name, url, repo, image, description, tools }) => (
 				<Card name = {name}, url={url}, repo={repo}, image={image} description={description}, tools={tools}/>))}

@@ -1,10 +1,10 @@
-name: 'nest-deploy'
+name: 'ssh-deploy'
 on: 
   push
 
 jobs: 
   nest-deploy:
-    name: Nest Deploy
+    name: SSH Deploy
     runs-on: ubuntu-latest
     environment: deploy
     steps: 
@@ -19,4 +19,4 @@ jobs:
           script: |
             cd ${{ secrets.DIRECTORY }}            
             git pull
-            npm run build
+            bun run build

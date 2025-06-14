@@ -5,9 +5,13 @@ import Themes from 'astro-themes';
 import "../styles/global.css";
 interface Props {
     title: string;
+    description?: string;
+    ogImage?: string;
 }
 
-const { title } = Astro.props;
+const { title, description, ogImage } = Astro.props;
+const permalink = new URL(Astro.url.pathname, Astro.site).href;
+const ogImageURL = new URL(ogImage, Astro.site).href;
 ---
 
 <!doctype html>
@@ -16,8 +20,20 @@ const { title } = Astro.props;
         <title>{title} - phthallo</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, resizes-content" />
-        <meta name="description" content="Annabel Quach's personal website.">
+        <meta name="description" content={description ? description : "phthallo's home on the internet"}>
         <link href="/css/style.css" rel="stylesheet" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={permalink} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImageURL} />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={permalink} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={ogImageURL} />
         <Themes defaultTheme="dark"/>
     </head>
     <style is:inline>

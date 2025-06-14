@@ -6,7 +6,7 @@ export async function GET(context) {
     description: 'musings and rambles of a sleep-deprived teen',
     site: context.site,
     items: await pagesGlobToRssItems(
-        import.meta.glob("../blog/*.mdx")
+        import.meta.glob("./blog/*.mdx")
     ),
     customData: `<language>en-au</language>`,
   });

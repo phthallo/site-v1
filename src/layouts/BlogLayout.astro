@@ -13,8 +13,7 @@ interface Props {
 
 const { title, date, image, alt, description, tags } = Astro.props;
 ---
-
-<Layout title={title}>
+<Layout title={title} ogImage=`open-graph${(Astro.url.pathname).slice(0, -1)}.png` description={description}>
 <h2>{title}</h2>
 <span><i><b>{date}</b> | {description}</i></span>
 <PreviewImage src = {image} altText = {alt}/>

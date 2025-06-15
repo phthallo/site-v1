@@ -1,7 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Columns from '../components/Columns.astro';
-import thisplace from "../data/thisplace.json";
 ---
 <Layout title="meta">
     <main>
@@ -9,22 +7,9 @@ import thisplace from "../data/thisplace.json";
         <p>this website is primarily of my own design, but it was very thematically based off of a <a href = "https://terminal.phthallo.com">website</a> I created earlier in 2024.</p>
         <p>the font used is <a href = "https://github.com/0xType/0xProto">0xproto</a>.</p>
         <p>i used <a href = "https://github.com/alex-grover/astro-themes/">astro-themes</a> to implement an easy theme switcher, since i'm using tailwind.</p>
-        <p>all of my websites, including this one, are hosted on <a href = "https://hackclub.app">nest</a>. i rather like <a href = "https://caddyserver.com/">caddy</a>, the web server which nest uses.</p>
+        <p>i used to host my services on <a href = "https://hackclub.app">nest</a> (check it out if you're a high schooler!); now, i use a vps running debian 12.</p>
         
         <h2>my spaces on the internet</h2>
-        <p>note: some pages may be down for maintenance or other reasons.</p>
-        { thisplace.map(place => 
-            <h4 class = "my-4 font-bold">{place.filter}</h4>
-            <Columns>
-                {place.content.map(item => 
-                <div>
-                    <a href = {"https://"+(place.filter).replace("*", item.name)}><i class = "">{item.name}</i></a>
-                </div>
-                <div>
-                    {item.description}
-                </div>
-                    )}
-            </Columns><br>
-        )}
+        <p>i can usually be found under this exact username.</p>
     </main>
 </Layout>

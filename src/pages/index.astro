@@ -1,25 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import PreviewImage from "../components/PreviewImage.astro";
-import Columns from "../components/Columns.astro";
-import projects from '../data/projects.json';
-const displayProjects = projects.slice(0,4)
+import Columns from '../components/Columns.astro';
 ---
 
 <Layout title="home">
 	<main>
-		<p>i go by <b>phthallo</b> (pronunciation contentious, but i accept <i>phay-low</i> or <i>thay-low</i>) everywhere online. i am a 17 year old programmer from australia.</p>
-		<p>read more <a href = "/about" aria-label="Visit the About page">about me</a>, my <a href = "/meta" aria-label="Visit the Meta page">spaces on the internet</a>, my <a href = "/blog" aria-label="Visit the Blog page">blog</a> or see what i'm up to <a href = "/now" aria-label="Visit the Now page">now</a>.</p>
-		<PreviewImage src = "/src/assets/etc/paint.jpg" altText = "The map 'Paint' from the Celeste Strawberry Jam Collab."></PreviewImage>
-		<h2>showcase</h2>
-		<Columns>
-				{displayProjects.map(({ name, url, repo, image, description, tools }) => (
-				<Card name = {name}, url={url}, repo={repo}, image = {image}, description={description}, tools={tools}/>))}
-		</Columns>
-		<p class = "text-center"><a href = "/projects" aria-label="Visit the Projects page">see more projects</a></p>
+		<div class = "!flex !flex-wrap justify-between">
+			<a href = "/about" aria-label="Visit the About page">about</a>
+			<a href = "/meta" aria-label="Visit the Meta page">website</a>
+			<a href = "/projects" aria-label="Visit the Projects page">projects</a>
+			<a href = "/blog" aria-label="Visit the Blog page">blog</a>
+			<a href = "/now" aria-label="Visit the Now page">now</a>
 		</div>
-	</div>
+
+		<p>i go by <b>phthallo</b> (pronunciation contentious, but i accept <i>phay-low</i> or <i>thay-low</i>) everywhere online. i am a 17 year old programmer from australia.</p>
+		<p>thanks for visiting - add something to my <a href = "/guestbook" aria-label="Visit the Guestbook page">guestbook</a> before you go :]</p>
+
+		<PreviewImage src = "/src/assets/etc/paint.jpg" altText = "The map 'Paint' from the Celeste Strawberry Jam Collab."></PreviewImage>
 	</main>
 </Layout>
 

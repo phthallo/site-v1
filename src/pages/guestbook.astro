@@ -1,7 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro"
-const entries = await fetch("https://guestbook.phthallo.com/entries").then(r => r.json())
 import Columns from "../components/Columns.astro"
+
+const entries = await fetch("https://guestbook.phthallo.com/entries").then(r => r.json())
+
+export const prerender = false
+
 ---
 
 <Layout title = "guestbook">

@@ -9,7 +9,9 @@ export const prerender = false
 ---
 
 <Layout title = "guestbook">
-    <p>these are the ten most recent entries in my <a href = "https://github.com/phthallo/guestbook">guestbook</a>! feel free to leave a message</p>
+    <div class = "flex flex-col">
+     <p>these are the ten most recent entries in my <a href = "https://github.com/phthallo/guestbook">guestbook</a>! feel free to leave a message :{'>'}</p>
+
     <div class = "dark:bg-white/10 bg-black/10 my-4 p-4 text-center"><code>ssh guestbook.phthallo.com</code></div>
     <Columns>
     {entries.map(({name, message, timestamp}) => (
@@ -20,4 +22,7 @@ export const prerender = false
         </div>
     ))}
     </Columns>
+    {entries == 0 && <p class = "flex flex-1 items-center justify-center italic">no entries found :{'('}</p>}
+    </div>
+
 </Layout>

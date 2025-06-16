@@ -12,7 +12,7 @@ export const prerender = false
     <div class = "flex flex-col">
      <p>these are the ten most recent entries in my <a href = "https://github.com/phthallo/guestbook">guestbook</a>! feel free to leave a message :{'>'}</p>
 
-    <div class = "dark:bg-white/10 bg-black/10 my-4 p-4 text-center"><code>ssh guestbook.phthallo.com</code></div>
+    <div class = "dark:bg-white/10 bg-black/10 my-4 p-4 text-center"><code>ssh guestbook.phthallo.com -p 2222</code></div>
     <Columns>
     {entries.map(({name, message, timestamp}) => (
         <div class = "bg-white/20 dark:bg-palette-900 border border-black/20 dark:border-white/20 rounded-lg p-4">

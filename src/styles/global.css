@@ -80,6 +80,11 @@
         text-decoration: none;
     }
 
+    .react-jinke-music-player-mobile-cover {
+        display: none;
+        border: none;
+        box-shadow: none;
+    }
 
     @media screen and (width < 640px) {
         p, ul {

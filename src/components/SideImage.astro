@@ -11,11 +11,11 @@ interface Props {
 const { image, altText, position } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*/*.{jpeg,jpg,png,gif}');
 ---
-<div class = "pb-4">
+<div class = "pb-4 mb-4">
     <Image 
         src = {images[image]()}
         alt={altText} 
         title = {altText}
         class = {`hidden w-3/12 h-full mb-4 object-cover float-${position} lg:inline rounded-lg ${position == "right" ? "ml-4" : "mr-4"}`}/>
     <slot/>
-    </div>
+</div>

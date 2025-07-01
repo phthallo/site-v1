@@ -22,6 +22,7 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
         <meta name="viewport" content="width=device-width, initial-scale=1.0, resizes-content" />
         <meta name="description" content="phthallo's home on the internet">
         <link href="/css/style.css" rel="stylesheet" />
+        <link href="/rss.xml" type="application/atom+xml" rel="alternate" title="rss feed"> 
         <meta property="og:type" content="website" />
         <meta property="og:url" content={permalink} />
         <meta property="og:title" content={title} />
@@ -56,4 +57,21 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
             <Footer />
         </div>
     </body>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var iframe = document.getElementById('iframe1');
+          if (iframe) {
+            iframe.onload = function() {
+              try {
+                var style = document.createElement('style');
+                style.textContent = '.react-jinke-music-player-mobile-cover { display: none; }';
+                // @ts-ignore
+                iframe.contentDocument.head.appendChild(style);
+              } catch (e) {
+                console.warn('Could not access iframe contents:', e);
+              }
+            };
+          }
+        });
+</script>
 </html>

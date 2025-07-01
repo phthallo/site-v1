@@ -80,12 +80,6 @@
         text-decoration: none;
     }
 
-    .react-jinke-music-player-mobile-cover {
-        display: none;
-        border: none;
-        box-shadow: none;
-    }
-
     @media screen and (width < 640px) {
         p, ul {
             font-size: 14px;
@@ -99,7 +93,7 @@
         @apply text-2xl transition-all duration-100 md:text-3xl text-palette-900 dark:text-white;
     }
     h2 {
-        @apply mt-0 text-xl transition-all duration-100 md:text-2xl;
+        @apply my-4 text-xl transition-all duration-100 md:text-2xl;
     }
 
     h3 {

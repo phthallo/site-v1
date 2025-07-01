@@ -1,0 +1,37 @@
+---
+interface Props {
+    artist: string,
+    songName: string,
+    song: string
+}
+
+const { artist, songName, song } = Astro.props;
+---
+
+<div class = "dark:bg-white/10 bg-black/10 flex flex-col gap-2 sm:flex-row max-sm:items-center rounded-lg">
+    <audio src = {`https://navidrome.phthallo.com/share/s/${song}`} id = {song} />
+    <img src = {`https://navidrome.phthallo.com/share/img/${song}`} class = "hidden sm:inline size-36 image-cover rounded-l-lg"/>
+    <div class = "p-4 w-full flex flex-col items-center justify-between">
+        <div class = "flex flex-col items-center">
+            <h3>{songName}</h3>
+            <span class = "italic">{artist}</span>
+        </div>
+        <div class = "flex flex-row justify-between w-full">
+            <button onclick={`document.querySelectorAll("audio").forEach((elem) => elem.pause()); document.getElementById("${song}").play() `}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                </svg>
+            </button> 
+            <button onclick={`document.getElementById("${song}").pause()`}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                </svg>
+            </button> 
+            <button onclick={`document.getElementById("${song}").muted = true`}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                </svg>
+            </button> 
+        </div>
+    </div>
+</div>

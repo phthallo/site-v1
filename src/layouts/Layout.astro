@@ -57,21 +57,4 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
             <Footer />
         </div>
     </body>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          var iframe = document.getElementById('iframe1');
-          if (iframe) {
-            iframe.onload = function() {
-              try {
-                var style = document.createElement('style');
-                style.textContent = '.react-jinke-music-player-mobile-cover { display: none; }';
-                // @ts-ignore
-                iframe.contentDocument.head.appendChild(style);
-              } catch (e) {
-                console.warn('Could not access iframe contents:', e);
-              }
-            };
-          }
-        });
-</script>
 </html>

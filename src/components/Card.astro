@@ -15,7 +15,7 @@ const { name, url, repo, image, description, tools } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*/*.{jpeg,jpg,png,gif}')
 ---
 
-<div class="hover:scale-[101%] relative flex flex-col overflow-auto rounded-lg bg-white/20 dark:bg-palette-900 border border-black/20 dark:border-white/20">
+<div class="relative flex flex-col overflow-auto rounded-lg bg-white/20 dark:bg-palette-900 border border-black/20 dark:border-white/20">
     { image ? <Image src = {images[image]()} alt={description} class="w-full h-36 object-cover" /> : null}
     <div class = "p-4 h-full flex flex-col">
         <a class="no-underline text-sm sm:text-base transition-all duration-300 font-bold hover:bg-transparent" href={url}>{name}</a>

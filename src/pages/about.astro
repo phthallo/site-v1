@@ -8,36 +8,53 @@ import Expand from "../components/Expand.astro";
 <Layout title="about">
     <main>
         <p>
-            hey there, i'm phthallo! i'm originally from adelaide, australia and graduated high school in november 2024. i'm currently taking a gap year to help build new things at <a href="https://hackclub.com/">hack club</a>.
+            hey there, i'm phthallo! i'm originally from adelaide, australia and graduated high school in november 2024. i'm currently taking a gap year to help build new things at <a target = "_blank" href="https://hackclub.com/">hack club</a>. 
+        </p>
+
+        <p>
+            i'm a tinkerer at heart and have been messing around on the web for as long as i can remember. welcome to my corner of the internet!
         </p>
         <PreviewImage src = "/src/assets/etc/nitw.jpg" altText = "Mae from the video game Night in the Woods standing in a street"></PreviewImage>
         <p>
-            outside of programming, some of the things i like are: 
-            <ul>
-                <li>playing indie video games. recently, i've been enjoying balatro and celeste. <s>my celeste any% pb is 57:02 :D</s></li>
-                <li>fantasy fiction & sci-fi, plus other transformative works!</li>
-                <li>my guilty pleasure: comedy and panel shows like taskmaster and qi</li>
-                <li><a href = "https://en.wikipedia.org/wiki/Bl%C3%A5haj">blåhaj</a></li>
-                <Columns>
-                <li>indie rock music! you can check out my stats on <a href = "https://www.last.fm/user/phthallo">last.fm</a>. in fact, i'm currently listening to:</li>
-                <center><a href = "https://github.com/kittinan/spotify-github-profile"><img src = "https://spotify-github-profile.kittinanx.com/api/view?uid=by9ol1keui3n1yfhqpxskyjn3&cover_image=true&theme=novatorem&show_offline=true&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=true"></img></a></center>
-                </Columns>
-            </ul>
+            outside of programming, some of the things i like are:         
         </p>
+            <span class = "flex flex-col gap-2">
+
+                <details>
+                    <summary>playing indie video games.</summary>
+                    <p>recently, i've been enjoying balatro, nine sols and celeste. <br/> i used to (extremely casually) speedrun celeste and my any% pb is 57:02 :D. i also really like playing modded celeste maps and campaigns.</p>
+                </details>
+
+                <details>
+                    <summary>fantasy fiction & sci-fi, plus other transformative works!</summary>
+                    <p>winds of winter 😭🙏</p>
+                </details>
+                <details>
+                    <summary>my guilty pleasure: comedy and panel shows like taskmaster and qi</summary>
+                    <p>they're really fun!</p>
+                </details>
+                <details>
+                    <summary>blåhaj</summary>
+                    <p>i own four <a target = "_blank"  href = "https://en.wikipedia.org/wiki/Bl%C3%A5haj">sharks</a></p>
+                </details>
+            <Columns>
+                <details>
+                    <summary>indie rock music! in fact, i'm currently listening to:</summary>
+                    <p>you can check out my stats on <a target = "_blank" href = "https://www.last.fm/user/phthallo">last.fm</a>. </p>
+                </details>
+                <center><a href = "https://github.com/kittinan/spotify-github-profile"><img src = "https://spotify-github-profile.kittinanx.com/api/view?uid=by9ol1keui3n1yfhqpxskyjn3&cover_image=true&theme=novatorem&show_offline=true&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=true"></img></a></center>
+            </Columns>
+        </span>    
         <p>one of my dreams is to travel the world someday, because this earth is a vast and brilliant place and we're only alive for so long. but for now, you can find me in several online spaces, listed at the top of this page.</p>
         <p>if you want to chat, don't be afraid to get in touch.</p>
         <div>
             <Expand title = "webrings and buttons!">
             <div slot = "content">
-                    <p class = "mt-0"><a href = "https://ring.nullp.tr">nullring</a></p>
-                    <iframe class="w-full md:h-16 h-max" style="color-scheme: normal;" src = "https://ring.nullp.tr/api/sites?type=html&style=display:flex;gap:12px;justify-content:normal;"></iframe>
                     <p class = "mt-0"><a href = "https://webring.phthallo.com">placeholder</a></p>
                     <iframe class = "w-full md:h-16 h-max" src = "https://webring.phthallo.com/api/widgets/0?format=text&style=text-align:left;font-family:monospace"/>
                     <p>go check them out :)</p>   
-                    <p><iframe src="https://increm.net/badge?key=phthallo" title="incremnet badge" width="88" height="31" style="border: none; background: url('https://increm.net/bg.png');"></iframe></p>
                 </div>
             </Expand>
         </div>
-
     </main>
 </Layout>

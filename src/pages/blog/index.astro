@@ -11,15 +11,20 @@ posts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatte
         <body>
             <h2>blog</h2>
             <p>sometimes, i write!</p>
-            <Columns>
+
+            <div class = "flex flex-col gap-4">
                 {posts.map(post => (
                 <Post 
                     name = {post.frontmatter.title}, 
                     url={post.url}, 
                     image={post.frontmatter.image.url}, 
                     description={post.frontmatter.description},
-                    date={(post.frontmatter.pubDate).toString().slice(0,10)}/>))}
-            </Columns>
+                    date={(new Date(post.frontmatter.pubDate)).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                })}/>))}
+            </div>
         </body>
     </main>
 </Layout>

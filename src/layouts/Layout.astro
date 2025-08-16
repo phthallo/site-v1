@@ -51,7 +51,7 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
         }
       </style>
     <body class="z-1 m-0 h-full min-h-screen overflow-y-scroll bg-[#e8e5f0] dark:bg-palette-700 bg-[url('/topographylight.svg')] dark:bg-[url('/topography.svg')] pt-0 font-proto text-white">
-        <div id="primary" class="z-2 m-auto grid min-h-screen w-11/12 px-8 pt-2 transition-all duration-100 lg:w-1/2" style="grid-template-rows: auto 1fr auto">
+        <div id="primary" class="z-2 m-auto grid min-h-screen p-8 transition-all duration-100 lg:w-1/2" style="grid-template-rows: auto 1fr auto">
             <Header />
             <slot />
             <Footer />

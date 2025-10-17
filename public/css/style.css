@@ -10,7 +10,10 @@
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"],
+.moon, .sun, .astro, .css3, .rust, .arduino, .tailwindcss,
+.javascript, .python, .rails, .envelope, .link, .github,
+.linkedin, .html5 {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
@@ -25,51 +28,51 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-moon:before {
+.moon:before {
   content: "\e90c";
 }
-.icon-sun:before {
+.sun:before {
   content: "\e90b";
 }
-.icon-astro:before {
+.astro:before {
   content: "\e909";
 }
-.icon-css3:before {
+.css3:before {
   content: "\e907";
 }
-.icon-rust:before {
+.rust:before {
   content: "\e906";
 }
-.icon-arduino:before {
+.arduino:before {
   content: "\e900";
 }
-.icon-tailwindcss:before {
+.tailwindcss:before {
   content: "\e901";
 }
-.icon-javascript:before {
+.javascript:before {
   content: "\e902";
 }
-.icon-python:before {
+.python:before {
   content: "\e903";
 }
-.icon-rails:before {
+.rails:before {
   content: "\e904";
 }
-.icon-envelope:before {
+.envelope:before {
   content: "\e905";
 }
-.icon-link:before {
+.link:before {
   content: "\e9cb";
 }
-.icon-link:before {
+.link:before {
   content: "\e9cb";
 }
-.icon-github:before {
+.github:before {
   content: "\eab0";
 }
-.icon-linkedin:before {
+.linkedin:before {
   content: "\eac9";
 }
-.icon-html5:before {
+.html5:before {
   content: "\eae4";
 }

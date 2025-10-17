@@ -8,6 +8,7 @@ const colours = [
     "bg-palette-500",
     "bg-palette-600",
 ]
+const commitHash = import.meta.env.SOURCE_COMMIT
 ---
 
 <footer>
@@ -15,6 +16,6 @@ const colours = [
         {colours.map((colour) => 
         <span class = {`inline-block h-8 w-[10%] ${colour} opacity-60 dark:opacity-100 `}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--
         -->)}
-    <i><span class = "block pt-2 text-xs">this website is <a href = "https://github.com/phthallo/site-v1">open source</a>. made with astro</i></span>
+    <i><span class = "block pt-2 text-xs">on commit <a href = {`https://github.com/phthallo/site-v1/${commitHash}`}>{commitHash}</a>. made with astro</i></span>
     </div>
 </footer>

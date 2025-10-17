@@ -8,22 +8,28 @@ interface Props {
     image: string;
     description: string;
     date: string;
+    tags: string[];
 }
 
-const { name, url, image, description, date } = Astro.props;
+const { name, url, image, description, date, tags } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*/*.{jpeg,jpg,png,gif}')
 ---
 
 <div class="relative flex flex-row overflow-auto rounded-lg bg-light-100 dark:bg-palette-900 border border-black/20 dark:border-white/20">
     { image ? <Image src = {images[image]()} alt={description} class="w-36 min-h-full object-cover" /> : null}
-    <div class = "p-4 h-full flex flex-col">
+    <div class = "p-4 h-full w-full flex flex-col">
         <a class="no-underline text-sm sm:text-base transition-all duration-300 font-bold" href={url}>{name}</a>
         <div class="grow">
             <p>{description}</p>
         </div>   
         <hr>
-        <div class="bottom-0 mt-auto text-sm sm:text-base font-bold">
-            {date}
+        <div class="bottom-0 mt-auto text-xs sm:text-sm flex flex-row w-full justify-between">
+            <span>{date}</span>
+            <span>
+                {tags.map(tag => (
+                    <a class = "p-2 rounded-sm border dark:border-white/20 border-black/20" href = {`/tags/${tag}`}>#{tag}</a>
+                ))}
+            </span>
         </div>
      </div>
 </div>

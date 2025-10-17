@@ -15,12 +15,16 @@ const { title, date, image, alt, description, tags } = Astro.props;
 ---
 <Layout title={title} ogImage=`open-graph${(Astro.url.pathname).slice(0, -1)}.png` description={description}>
 <h2>{title}</h2>
-<span><i><b>{date}</b> | {description}</i></span>
-<PreviewImage src = {image} altText = {alt}/>
-<span>
-    tags: { tags.map(tag => 
+<span class = "italic flex flex-row justify-between">
+    <b>{date}</b> 
+    
+    <span>tags: { tags.map(tag => 
     <a class="mr-2" href = {`/tags/${tag}`}>{tag}</a>
-    )}
+    )}</span>
+</span>
+<PreviewImage src = {image} altText = {alt}/>
+<span class = "italic text-center">
+    {description}
 </span>
 <hr>
 <slot/>

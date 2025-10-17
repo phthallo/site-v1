@@ -6,18 +6,19 @@ import Columns from '../components/Columns.astro';
 
 <Layout title="home">
 	<main>
-		<div class = "!flex !flex-wrap justify-between">
-			<a href = "/about" aria-label="Visit the About page">about</a>
-			<a href = "/meta" aria-label="Visit the Meta page">website</a>
-			<a href = "/projects" aria-label="Visit the Projects page">projects</a>
-			<a href = "/blog" aria-label="Visit the Blog page">blog</a>
-			<a href = "/now" aria-label="Visit the Now page">now</a>
-		</div>
-
-		<p>i go by <b>phthallo</b> (pronunciation contentious, but i accept <i>phay-low</i> or <i>thay-low</i>) everywhere online. i am a 17 year old programmer from australia.</p>
-		<p>thanks for visiting - add something to my <a href = "/guestbook" aria-label="Visit the Guestbook page">guestbook</a> before you go :]</p>
-
+		<p>I go by <b>phthallo</b> (pronunciation contentious, but I accept <i>phay-low</i> or <i>thay-low</i>) everywhere online. I am a 17 year old programmer from Australia.</p>
+		<p>Thanks for visiting - add something to my <a href = "/guestbook" aria-label="Visit the Guestbook page">guestbook</a> before you go :]</p>
 		<PreviewImage src = "/src/assets/etc/paint.jpg" altText = "The map 'Paint' from the Celeste Strawberry Jam Collab."></PreviewImage>
+		    <div class="flex flex-col justify-between text-sm leading-7 sm:leading-5 transition-all duration-300 sm:flex-row sm:text-base">
+        <div class = "text-palette-800">
+            <b><i class="envelope mr-2"></i>contact<!-- a comment -->@<!-- --></span>phthallo.com</b><br />
+            <b><a class="icon" href="https://github.com/phthallo"><i class="github mr-2"></i>@phthallo</a></b>
+        </div>
+        <div class = "text-palette-800">
+            <b><a class="icon" href="https://linkedin.com/in/annabelquach"><i class="linkedin mr-2" ></i>annabelquach</a></b><br />
+            <b><i class="github mr-2"></i>@phthallo</b>
+        </div>
+    </div>
 	</main>
 </Layout>
 

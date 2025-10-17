@@ -9,7 +9,11 @@ posts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatte
 <Layout title="blog">
     <main>
         <body>
-            <h2>blog</h2>
+            <h2 class = "flex flex-row gap-2 items-center">blog
+                <a href = "/rss.xml"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 19.5v-.75a7.5 7.5 0 0 0-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg></a>
+            </h2>
             <p>sometimes, i write!</p>
 
             <div class = "flex flex-col gap-4">
@@ -20,10 +24,11 @@ posts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatte
                     image={post.frontmatter.image.url}, 
                     description={post.frontmatter.description},
                     date={(new Date(post.frontmatter.pubDate)).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                })}/>))}
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                    })},
+                    tags={post.frontmatter.tags}/>))}
             </div>
         </body>
     </main>

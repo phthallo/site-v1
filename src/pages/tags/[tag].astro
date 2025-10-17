@@ -20,16 +20,16 @@ const { posts } = Astro.props;
 ---
 
 <Layout title={tag}>
-  <p>found {posts.length} { posts.length == 1 ? "post" : "posts"} tagged with <b>{tag}</b></p>
-  <ul>
-    <Columns>
-        {posts.map(post => (
-        <Post 
-            name = {post.frontmatter.title}, 
-            url={post.url}, 
-            image={post.frontmatter.image.url}, 
-            description={post.frontmatter.description},
-            date={(post.frontmatter.pubDate).toString().slice(0,10)}/>))}
-    </Columns>
-  </ul>
+  <div class = "flex flex-col gap-4">
+      <p>found {posts.length} { posts.length == 1 ? "post" : "posts"} tagged with <b>{tag}</b></p>
+
+      {posts.map(post => (
+      <Post 
+          name = {post.frontmatter.title}, 
+          url={post.url}, 
+          image={post.frontmatter.image.url}, 
+          description={post.frontmatter.description},
+          date={(post.frontmatter.pubDate).toString().slice(0,10)}
+          tags={post.frontmatter.tags}/>))}
+  </div>
 </Layout>

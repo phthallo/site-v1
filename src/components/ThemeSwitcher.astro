@@ -4,11 +4,10 @@
 
 <script is:inline>
     var lightMode = document.documentElement.attributes.getNamedItem("data-theme")?.value == "light";
-    // Fall back on localStorage to get theme details, as lightMode @ initial render is always undefined.
     lightMode = lightMode ? lightMode : (localStorage.getItem("theme") == "light")
     document.addEventListener("DOMContentLoaded", function() {
         const icon = document.getElementById('toggleIcon');
-        icon.className = (lightMode) ? "icon-moon" : "icon-sun";
+        icon.className = (lightMode) ? "moon" : "sun";
     });
     function setTheme() {
         document.dispatchEvent(
@@ -16,7 +15,7 @@
         );
         lightMode = !lightMode;
         const icon = document.getElementById('toggleIcon');
-        icon.className = (lightMode) ? "icon-moon" : "icon-sun";
+        icon.className = (lightMode) ? "moon" : "sun";
     }
 </script>
 

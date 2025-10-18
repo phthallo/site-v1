@@ -16,6 +16,6 @@ const commitHash = import.meta.env.SOURCE_COMMIT
         {colours.map((colour) => 
         <span class = {`inline-block h-8 w-[10%] ${colour} opacity-60 dark:opacity-100 `}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><!--
         -->)}
-    <i><span class = "block pt-2 text-xs">on commit <a href = {`https://github.com/phthallo/site-v1/${commitHash}`}>{commitHash}</a>. made with astro</i></span>
+    <i><span class = "block pt-2 text-xs">on commit <a href = {`https://github.com/phthallo/site-v1/commit/${commitHash}`}>{commitHash?.substring(0,7)}</a>. made with astro</i></span>
     </div>
 </footer>

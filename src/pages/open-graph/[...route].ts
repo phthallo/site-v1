@@ -11,8 +11,8 @@ export const { getStaticPaths, GET } = OGImageRoute({
   param: 'route',
   pages: pages,
   getImageOptions: (path, page) => ({
-    title: page.data.title,
-    description: page.data.description,
+    title: page.title,
+    description: page.description,
     logo: { path: 'public/favicon.ico' },
     bgGradient: [[19, 15, 25]],
     font: { title: { families: [ "0xProto", "monospace" ] }, description: { families: [ "0xProto", "monospace" ] } }, 

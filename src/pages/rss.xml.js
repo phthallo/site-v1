@@ -6,7 +6,9 @@ export async function GET(context) {
     title: 'phthallo',
     description: 'musings and rambles of a sleep-deprived teen',
     site: context.site,
-    items: await getCollection("blog"),
+    items: await pagesGlobToRssItems(
+        await getCollection("blog")
+    ),
     customData: `<language>en-au</language>`,
   });
 }

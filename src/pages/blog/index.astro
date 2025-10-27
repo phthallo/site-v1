@@ -2,8 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import Columns from "../../components/Columns.astro";
 import Post from '../../components/Post.astro';
-const posts = await Astro.glob("../blog/*.mdx");
-posts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
+import { getCollection } from 'astro:content';
+const blogPosts = await getCollection('blog');
+
+const posts = blogPosts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.data.pubDate.toString()));
 ---
 
 <Layout title="blog">
@@ -19,16 +21,16 @@ posts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatte
             <div class = "flex flex-col gap-4">
                 {posts.map(post => (
                 <Post 
-                    name = {post.frontmatter.title}, 
-                    url={post.url}, 
-                    image={post.frontmatter.image.url}, 
-                    description={post.frontmatter.description},
-                    date={(new Date(post.frontmatter.pubDate)).toLocaleDateString("en-US", {
+                    name = {post.data.title}, 
+                    url={`blog/${post.id}`}, 
+                    image={post.data.image.url}, 
+                    description={post.data.description},
+                    date={(new Date(post.data.pubDate)).toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "long",
                         day: "numeric",
                     })},
-                    tags={post.frontmatter.tags}/>))}
+                    tags={post.data.tags}/>))}
             </div>
         </body>
     </main>

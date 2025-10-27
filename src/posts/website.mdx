@@ -7,17 +7,7 @@ image:
     alt: "The map 'Paint' from the Celeste Strawberry Jam Collab."
 tags: ["webdev"]
 ---
-import BlogLayout from "../../layouts/BlogLayout.astro";
-import Timeline from "../../components/Timeline.astro";
-
-
-<BlogLayout 
-    title={frontmatter.title}
-    description={frontmatter.description} 
-    image={frontmatter.image.url} 
-    alt={frontmatter.image.alt} 
-    date={(frontmatter.pubDate).toString().slice(0,10)} 
-    tags={frontmatter.tags}>
+import Timeline from "@/components/Timeline.astro";
 
 Contrary to the name of the [repo](https://github.com/phthallo/site-v1), this is not actually version one of my website. Here's a comprehensive timeline of my history with web development:
 <Timeline timeline={[
@@ -35,4 +25,3 @@ The people yearn for the websites, it seems.
 
 [^1]: It's even cooler if you happen to own a sickass domain... something like underwhelm.ing 👁️ 
 </span>
-</BlogLayout>

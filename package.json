@@ -2,7 +2,9 @@
   "name": "website",
   "type": "module",
   "version": "0.0.1",
-  "engines": { "node": ">=18.20.8" },
+  "engines": {
+    "node": ">=18.20.8"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,13 +13,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "@astrojs/mdx": "^3.1.7",
-    "@astrojs/node": "^8.3.4",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.1.6",
-    "@astrojs/tailwind": "^5.1.1",
-    "astro": "4.16.18",
+    "@astrojs/check": "^0.9.5",
+    "@astrojs/mdx": "^4.3.8",
+    "@astrojs/node": "^9.5.0",
+    "@astrojs/rss": "^4.0.13",
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.15.1",
     "astro-og-canvas": "^0.7.0",
     "devicon": "^2.16.0",
     "tailwindcss": "^3.4.13",

@@ -43,12 +43,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/project
 						</div>
 
 						<div class = "flex flex-row justify-between items-center">
-							<span class="text-sm w-max sm:text-base transition-all duration-300 my-1 ml-0 mr-2 flex max-h-8 rounded-lg bg-light-100 text-palette-700 dark:bg-palette-600 p-1 dark:text-palette-900 font-bold flex-row items-center gap-1">
+							<span class="text-sm w-max sm:text-base transition-all duration-300 my-1 ml-0 mr-2 flex max-h-8 rounded-lg bg-light-200 text-palette-900 dark:bg-palette-600 p-1 dark:text-palette-900 font-bold flex-row items-center gap-1">
 								<i class={project.language.toLowerCase()}/>{project.language}
 							</span>
-						<div class="text-sm sm:text-base font-bold *:hover:bg-transparent *:hover:decoration-offset-4 *:hover:dark:bg-transparent *:text-light-300 *:dark:hover:text-palette-300">
-							<a class = "icon float-left" href={project.html_url} aria-label={`Visit the GitHub repository for ${project.name}`}><i class="github mr-2"></i><span class = "text-light-300 dark:text-palette-300 hover:underline hover:decoration-wavy">view source</span></a>
-						</div>
+							<a class = "icon float-left p-2 rounded-sm border dark:border-white/20 border-black/20 " href={project.html_url} aria-label={`Visit the GitHub repository for ${project.name}`}><i class="github mr-2"></i>view source</a>
 					</div>
 
 					</div>

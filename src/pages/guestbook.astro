@@ -15,10 +15,10 @@ export const prerender = false
     <div class = "dark:bg-white/10 bg-black/10 my-4 p-4 text-center"><code>ssh guestbook.phthallo.com -p 2222</code></div>
     <Columns>
     {entries.map(({name, message, timestamp}) => (
-        <div class = "bg-white/20 dark:bg-palette-900 border border-black/20 dark:border-white/20 rounded-lg p-4">
+        <div class = "bg-white/20 dark:bg-palette-900 border border-black/20 dark:border-white/20 rounded-lg p-4 flex flex-col">
             <span><b>{name}</b> said</span>
-            <p>{message}</p>
-            <i>{timestamp}</i>
+            <p class = "grow">{message}</p>
+            <i>{new Date(timestamp).toUTCString()}</i>
         </div>
     ))}
     </Columns>

@@ -1,31 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PreviewImage from "../components/PreviewImage.astro";
+import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-    title: string;
-    date: string;
-    image: string;
-    alt: string;
-    description: string;
-    tags: Array<any>;
+    post: CollectionEntry<"blog">;
 }
 
-const { title, date, image, alt, description, tags } = Astro.props;
+const { post } = Astro.props;
 ---
-<Layout title={title} ogImage=`open-graph${(Astro.url.pathname).slice(0, -1)}.png` description={description}>
-<h2>{title}</h2>
+<Layout title={post.data.title} ogImage=`open-graph${(Astro.url.pathname).slice(0, -1)}.png` description={post.data.description}>
+<h2>{post.data.title}</h2>
 <span class = "italic flex flex-row justify-between">
-    <b>{date}</b> 
+    <b>{post.data.pubDate.toDateString()}</b> 
     
-    <span>tags: { tags.map(tag => 
+    <span>tags: { post.data.tags.map(tag => 
     <a class="mr-2" href = {`/tags/${tag}`}>{tag}</a>
     )}</span>
 </span>
-<PreviewImage src = {image} altText = {alt}/>
+<PreviewImage src = {post.data.image.url} altText = {post.data.image.alt}/>
 <span class = "italic text-center">
-    {description}
+    {post.data.description}
 </span>
-<hr>
+<hr/>
 <slot/>
 </Layout>

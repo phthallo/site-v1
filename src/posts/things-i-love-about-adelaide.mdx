@@ -7,17 +7,9 @@ image:
     alt: "A sunset as seen from the banks of South Australia's Coorong River."
 tags: ["life"]
 ---
-import BlogLayout from "../../layouts/BlogLayout.astro";
-import Timeline from "../../components/Timeline.astro";
-import SideImage from "../../components/SideImage.astro";
+import Timeline from "@/components/Timeline.astro";
+import SideImage from "@/components/SideImage.astro";
 
-<BlogLayout 
-    title={frontmatter.title}
-    description={frontmatter.description} 
-    image={frontmatter.image.url} 
-    alt={frontmatter.image.alt} 
-    date={(frontmatter.pubDate).toString().slice(0,10)} 
-    tags={frontmatter.tags}>
 <SideImage image = "/src/assets/blog/coorongday.jpg" altText="The Coorong, by day." position="left">
 - The beaches. I really like Hallett Cove.
 - [Mount Lofty Botanic Garden](https://www.botanicgardens.sa.gov.au/visit/mount-lofty-botanic-garden) and [Morialta Conservation Park](https://www.parks.sa.gov.au/parks/morialta-conservation-park), for a beautiful, scenic walk.
@@ -31,4 +23,3 @@ import SideImage from "../../components/SideImage.astro";
 - [Hahndorf](https://hahndorfsa.org.au/) during autumn.
 - The Nan Hai Pu Tuo temple; a very serene Buddhist temple in Sellicks Hill which overlooks the coast. 
 </SideImage>
-</BlogLayout>

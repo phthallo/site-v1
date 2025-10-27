@@ -3,9 +3,13 @@ import { getCollection } from 'astro:content';
 
 export const prerender = true
 
+const blog = await getCollection("blog")
+
+const pages = Object.fromEntries(blog.map(({ id, data }) => [id, data]));
+
 export const { getStaticPaths, GET } = OGImageRoute({
   param: 'route',
-  pages: await getCollection("blog"),
+  pages: pages,
   getImageOptions: (path, page) => ({
     title: page.data.title,
     description: page.data.description,

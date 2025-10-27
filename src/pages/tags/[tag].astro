@@ -11,9 +11,10 @@ export async function getStaticPaths() {
   const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
   return uniqueTags.map((tag) => {
     const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
+    const sortedPosts = filteredPosts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.data.pubDate.toString()));
     return {
       params: { tag },
-      props: { posts: filteredPosts },
+      props: { posts: sortedPosts },
     };
   });
 }

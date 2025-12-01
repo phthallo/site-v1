@@ -5,6 +5,7 @@
 @layer base {
     @font-face {
         font-family: "0xProto";
+        font-display: swap;
         src: url("/fonts/0xProto/0xProtoNerdFont-Regular.ttf") format("truetype");
     }
     :root {
@@ -92,7 +93,7 @@
     }
 
     h3 {
-        @apply text-base transition-all duration-100 md:text-lg
+        @apply text-base transition-all duration-100 font-[1.2em] mb-[0.75em] underline
     }
 
     hr {

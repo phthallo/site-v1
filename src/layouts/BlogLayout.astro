@@ -10,6 +10,7 @@ interface Props {
 const { post } = Astro.props;
 ---
 <Layout title={post.data.title} ogImage=`open-graph/${post.id}.png` description={post.data.description}>
+<div>
 <h2>{post.data.title}</h2>
 <span class = "italic flex flex-row justify-between">
     <b>{post.data.pubDate.toDateString()}</b> 
@@ -18,10 +19,11 @@ const { post } = Astro.props;
     <a class="mr-2" href = {`/tags/${tag}`}>{tag}</a>
     )}</span>
 </span>
-<PreviewImage src = {post.data.image.url} altText = {post.data.image.alt}/>
+{post.data.image && <PreviewImage src = {post.data.image.url} altText = {post.data.image.alt}/> }
 <span class = "italic text-center">
     {post.data.description}
 </span>
-<hr/>
+
 <slot/>
+</div>
 </Layout>

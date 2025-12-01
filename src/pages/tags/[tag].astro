@@ -31,7 +31,7 @@ const { posts } = Astro.props;
       <Post 
           name = {post.data.title}, 
           url={`/blog/${post.id}`}, 
-          image={post.data.image.url}, 
+          image={post.data.image?.url}, 
           description={post.data.description},
           date={(post.data.pubDate).toLocaleDateString("en-US", {
                   year: "numeric",

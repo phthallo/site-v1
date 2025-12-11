@@ -14,7 +14,7 @@ const link = url.pathname.split("/").filter((i) => i);
         <span class = "group">
             <a class = "no-underline group-hover:bg-light-700 group-hover:dark:bg-palette-300 group-hover:dark:text-black" href = "/">home</a> 
             <span class = "text-[#242029]/90 dark:text-white">/</span> 
-            <a class = "no-underline group-hover:bg-light-700 group-hover:dark:bg-palette-300 group-hover:dark:text-black" href = "/">phthallo</a> 
+            <a class = "no-underline group-hover:bg-light-700 group-hover:dark:bg-palette-300 group-hover:dark:text-black"aria-label="go home" href = "/">phthallo</a> 
         </span>
             { link ? 
             <span> { link.map((data, index) => <span> / <a class = "no-underline" href = {`/` + link.slice(0, index + 1).join("/")}> {data}</a></span>) }   

@@ -8,9 +8,9 @@ interface Props {
 const { artist, songName, song } = Astro.props;
 ---
 
-<div class = "dark:bg-white/10 bg-black/10 flex flex-col gap-2 sm:flex-row max-sm:items-center rounded-lg">
+<div class = "dark:bg-white/10 bg-black/10 flex flex-col gap-2 sm:flex-row max-sm:items-center ">
     <audio src = {`https://navidrome.phthallo.com/share/s/${song}`} id = {song} />
-    <img src = {`https://navidrome.phthallo.com/share/img/${song}`} class = "hidden sm:inline size-36 image-cover rounded-l-lg"/>
+    <img src = {`https://navidrome.phthallo.com/share/img/${song}`} class = "hidden sm:inline size-36 image-cover "/>
     <div class = "p-4 w-full flex flex-col items-center justify-between">
         <div class = "flex flex-col items-center">
             <h3>{songName}</h3>

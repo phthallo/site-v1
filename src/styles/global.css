@@ -22,7 +22,7 @@
     }
 
     ::selection {
-        @apply bg-palette-800 dark:bg-palette-500 text-white dark:text-black;
+        @apply bg-light-700 dark:bg-palette-500 dark:text-black;
     }
 
     body {
@@ -86,7 +86,7 @@
 @layer components {
 
     h1 {
-        @apply text-2xl transition-all duration-100 md:text-3xl text-palette-900 dark:text-white;
+        @apply text-2xl transition-all duration-100 md:text-3xl text-light-600 dark:text-white;
     }
     h2 {
         @apply my-4 text-xl transition-all duration-100 md:text-2xl;
@@ -101,7 +101,7 @@
     }
 
     p, ul, span, div, pre {
-        @apply text-[#242029] dark:text-white text-sm;
+        @apply text-[#242029]/90 dark:text-white text-xs md:text-sm;
     }
     
     ul {
@@ -113,25 +113,40 @@
     }
 
     h2, h4, a, b {
-        @apply text-light-400 dark:text-palette-300 
+        @apply text-light-500 dark:text-palette-300 
     }
 
     a {
-        @apply underline-offset-4 hover:no-underline hover:bg-palette-200 hover:dark:bg-palette-300 hover:dark:text-black
+        @apply underline-offset-4 hover:no-underline text-light-500 hover:bg-light-700 hover:dark:bg-palette-300 hover:dark:text-black
     }
     
     input {
-        @apply my-4 bg-white p-2 font-normal rounded-md dark:bg-palette-900
+        @apply my-4 bg-white p-2 font-normal  dark:bg-palette-900
     }
 
     details > :nth-child(n+2) {
-        @apply pl-4 border-l p-2
+        @apply border-light-500 dark:border-palette-600 pl-4 border-l p-2
     }
 
     blockquote {
         @apply pl-4 border-l border-[#242029] dark:border-white
     }
     
+    img {
+        @apply border border-black/20 dark:border-palette-800/20
+    }
+    
+    .pagefind-ui {
+        @apply p-4 grow flex-1
+    }
+
+    input[type="text"] { 
+        @apply w-full
+    }
+
+    .pagefind-ui--reset {
+        @apply w-full flex-1
+    }
 }
 
 

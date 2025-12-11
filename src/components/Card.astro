@@ -15,7 +15,7 @@ const { name, url, repo, image, description, tools } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*/*.{jpeg,jpg,png,gif}')
 ---
 
-<div class="relative flex flex-col overflow-auto rounded-lg bg-white/20 dark:bg-palette-900 border border-black/20 dark:border-white/20">
+<div class="relative flex flex-col overflow-auto  bg-light-200/40 dark:bg-palette-900 border border-black/20 dark:border-white/20">
     { image ? <Image src = {images[image]()} alt={description} class="w-full h-36 object-cover" /> : null}
     <div class = "p-4 h-full flex flex-col">
         <a class="no-underline text-sm sm:text-base transition-all duration-300 font-bold hover:bg-transparent" href={url}>{name}</a>
@@ -25,7 +25,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*/*.{jp
         <div>
         {
             tools.map((tools) => (
-                <span class="text-sm sm:text-base transition-all duration-300 my-1 ml-0 mr-2 inline-block max-h-8 rounded-lg bg-light-100 text-palette-700 dark:bg-palette-600 p-1 dark:text-palette-900">
+                <span class="text-sm sm:text-base transition-all duration-300 my-1 ml-0 mr-2 inline-block max-h-8  bg-light-100 text-palette-700 dark:bg-palette-600 p-1 dark:text-palette-900">
                     <!-- prettier-ignore -->
                     <i class={`${tools.icon} mr-1`} />{tools.name}
                 </span>

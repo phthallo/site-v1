@@ -1,26 +1,45 @@
 ---
 import ThemeSwitcher from '../components/ThemeSwitcher.astro';
+import Search from '@/components/Search.astro';
 const url = new URL(Astro.url.pathname, Astro.site);
 const link = url.pathname.split("/").filter((i) => i);
 ---
 
 <header>
     <!-- prettier-ignore -->
-    <div id = "navigation" class = "mb-3">
-        <ThemeSwitcher default="dark" />
-        <span>~/ <a class = "no-underline" href = "/">home</a>
-        { link ? 
-        <span> { link.map((data, index) => <span> / <a class = "no-underline" href = {`/` + link.slice(0, index + 1).join("/")}> {data}</a></span>) }   
-        </span> : null}
+    <div id = "navigation" class = "mb-3 border border-light-50 dark:border-palette-800/70 flex flex-col justify-between">
+    <div class = "flex flex-row justify-between p-2">
+        <Search/>
+        <span>~/ 
+        <span class = "group">
+            <a class = "no-underline group-hover:bg-light-700 group-hover:dark:bg-palette-300 group-hover:dark:text-black" href = "/">home</a> 
+            <span class = "text-[#242029]/90 dark:text-white">/</span> 
+            <a class = "no-underline group-hover:bg-light-700 group-hover:dark:bg-palette-300 group-hover:dark:text-black" href = "/">phthallo</a> 
         </span>
+            { link ? 
+            <span> { link.map((data, index) => <span> / <a class = "no-underline" href = {`/` + link.slice(0, index + 1).join("/")}> {data}</a></span>) }   
+            </span> : null}
+        </span>
+
+        <div class = "flex flex-row gap-2 items-center">
+            <ThemeSwitcher default="dark" />
+            <button id="open-search" class="text-palette-900 dark:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+                </button>
+        </div>
+    </div>
+
+        <hr class = "my-0 border-light-50 dark:border-palette-800/70"/>
+        <div class = "text-2xs flex flex-wrap justify-between items-center gap-4 p-2 *:no-underline *:leading-none">
+        <a href = "/about" aria-label="Visit the About page">[ about ]</a>
+        <a href = "/meta" aria-label="Visit the Meta page">[ meta ]</a>
+        <a href = "/projects" aria-label="Visit the Projects page">[ projects ]</a>
+        <a href = "/blog" aria-label="Visit the Blog page">[ blog ]</a>
+        <a href = "/now" aria-label="Visit the Now page">[ now ]</a>
+    </div>
     </div>
     <h1 class = "py-2">phthallo.</h1>
-    <div class = "flex flex-wrap justify-between gap-4">
-        <a href = "/about" aria-label="Visit the About page">about</a>
-        <a href = "/meta" aria-label="Visit the Meta page">website</a>
-        <a href = "/projects" aria-label="Visit the Projects page">projects</a>
-        <a href = "/blog" aria-label="Visit the Blog page">blog</a>
-        <a href = "/now" aria-label="Visit the Now page">now</a>
-    </div>
-    <hr/>
+
 </header>

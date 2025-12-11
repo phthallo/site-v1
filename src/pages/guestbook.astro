@@ -1,28 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Columns from "../components/Columns.astro"
-
-const entries = await fetch("https://guestbook.phthallo.com/entries").then(r => r.json())
-
-export const prerender = false
-
 ---
 
 <Layout title = "guestbook">
+    <script>
+        const entries = await fetch("https://guestbook.phthallo.com/entries").then(r => r.json())
+        const container = document.getElementsByClassName('id_column')[0];
+        entries.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'bg-light-200/40 dark:bg-palette-900 border border-black/20 dark:border-white/20  p-4 flex flex-col'; 
+            div.innerHTML = `
+            <span><b>${item.name}</b> said</span>
+            <p class = "grow">${item.message}</p>
+            <i>${new Date(item.timestamp).toUTCString()}</i>
+            `
+            container.appendChild(div);
+        })
+        if (entries.length == 0) {
+            container.innerHTML = `<p class = "flex flex-1 items-center justify-center italic">no entries found :{'('}</p>}`
+        }
+    </script>
     <div class = "flex flex-col">
      <p>these are the ten most recent entries in my <a href = "https://github.com/phthallo/guestbook">guestbook</a>! feel free to leave a message :{'>'}</p>
 
-    <div class = "dark:bg-white/10 bg-black/10 my-4 p-4 text-center"><code>ssh guestbook.phthallo.com -p 2222</code></div>
+    <div class = "dark:bg-white/10 bg-light-200/40 my-4 p-4 text-center"><code>ssh guestbook.phthallo.com -p 2222</code></div>
     <Columns>
-    {entries.map(({name, message, timestamp}) => (
-        <div class = "bg-white/20 dark:bg-palette-900 border border-black/20 dark:border-white/20 rounded-lg p-4 flex flex-col">
-            <span><b>{name}</b> said</span>
-            <p class = "grow">{message}</p>
-            <i>{new Date(timestamp).toUTCString()}</i>
-        </div>
-    ))}
     </Columns>
-    {entries == 0 && <p class = "flex flex-1 items-center justify-center italic">no entries found :{'('}</p>}
     </div>
 
 </Layout>

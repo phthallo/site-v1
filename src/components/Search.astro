@@ -1,0 +1,52 @@
+
+<script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script>
+    import { PagefindUI } from "@pagefind/default-ui";
+    window.addEventListener("DOMContentLoaded", () => {
+      const dialog = document.getElementById("search-dialog") as HTMLDialogElement;
+      const openBtn = document.getElementById("open-search");
+      const closeBtn = document.getElementById("close-search");
+
+      openBtn?.addEventListener("click", () => dialog?.showModal());
+      closeBtn?.addEventListener("click", () => dialog?.close());
+
+      new PagefindUI({
+        element: "#search",
+        showSubResults: true,
+        autofocus: true,
+      });
+
+      const el = document.querySelector(".pagefind-ui");
+      const input = el?.querySelector(`input[type="text"]`) as HTMLInputElement;
+      const clearButton = el?.querySelector(".pagefind-ui__search-clear");
+      const url = new URL(window.location.href);
+      const params = new URLSearchParams(url.search);
+      const query = params.get("q");
+
+      if (query && input) {
+        input.value = query;
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+      }
+      input?.addEventListener("input", (e) => {
+        const input = e.target as HTMLInputElement;
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+        params.set("q", input.value);
+        window.history.replaceState({}, "", `${url.pathname}?${params}`);
+      });
+      clearButton?.addEventListener("click", () => {
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+        params.delete("q");
+        window.history.replaceState({}, "", `${url.pathname}`);
+      });
+    });
+  </script>
+
+<dialog id="search-dialog" class="bg-light-100 dark:bg-palette-900 border border-light-50 dark:border-palette-300/70 p-0 md:p-5 w-full md:max-w-xl" closedby="any">
+  <form method="dialog" class="relative p-0 md:p-2 flex flex-row">
+      <button id="close-search" class="text-lg px-2 py-1 absolute right-0 top-0" aria-label="Close">&times;</button>
+      <div id="search" class = "w-full flex p-2 flex-row gap-4 items-center">
+      </div>
+  </form>
+</dialog>

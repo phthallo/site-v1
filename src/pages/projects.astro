@@ -26,8 +26,8 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/project
         <h2>my projects</h2>
 		<div class = "flex flex-col gap-4">
 				{projects.map((project) => (
-				<div class="relative flex flex-col overflow-auto rounded-lg bg-white/20 dark:bg-palette-900 border border-black/20 dark:border-white/20">
-					{images["/src/assets/projects/" + project.name.toLowerCase() + ".jpg"] ? <Image src = {images["/src/assets/projects/" + project.name.toLowerCase() + ".jpg"]()} alt={project.description} class="w-full h-36 object-cover" /> : ""}
+				<div class="relative flex flex-col overflow-auto bg-light-200/40 dark:bg-palette-900 border border-palette-900/70 dark:border-palette-800/70">
+					{images["/src/assets/projects/" + project.name.toLowerCase() + ".jpg"] ? <Image src = {images["/src/assets/projects/" + project.name.toLowerCase() + ".jpg"]()} alt={project.description} class="w-full h-36 object-cover border-x-0 border-t-0" /> : ""}
 					<div class = "p-4 h-full flex flex-col">
 						<a class="no-underline text-sm sm:text-base transition-all duration-300 font-bold hover:bg-transparent group flex flex-row justify-between" href = {`${project.homepage ? project.homepage : project.html_url}`}>
 							{project.name} 
@@ -43,12 +43,11 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/project
 						</div>
 
 						<div class = "flex flex-row justify-between items-center">
-							<span class="text-sm w-max sm:text-base transition-all duration-300 my-1 ml-0 mr-2 flex max-h-8 rounded-lg bg-light-200 text-palette-900 dark:bg-palette-600 p-1 dark:text-palette-900 font-bold flex-row items-center gap-1">
+							<span class="text-sm w-max sm:text-base transition-all duration-300 my-1 ml-0 mr-2 flex max-h-8  bg-light-200 text-palette-900 dark:bg-palette-600 p-1 dark:text-palette-900 font-bold flex-row items-center gap-1">
 								<i class={project.language.toLowerCase()}/>{project.language}
 							</span>
-							<a class = "icon float-left p-2 rounded-sm border dark:border-white/20 border-black/20 " href={project.html_url} aria-label={`Visit the GitHub repository for ${project.name}`}><i class="github mr-2"></i>view source</a>
+							<a class = "icon float-left p-2  border dark:border-white/20 border-black/20 " href={project.html_url} aria-label={`Visit the GitHub repository for ${project.name}`}><i class="github mr-2"></i>view source</a>
 					</div>
-
 					</div>
 				</div>
 				))}

@@ -16,6 +16,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*/*.{jp
         src = {images[image]()}
         alt={altText} 
         title = {altText}
-        class = {`hidden w-3/12 h-full mb-4 object-cover float-${position} lg:inline rounded-lg ${position == "right" ? "ml-4" : "mr-4"}`}/>
+        class = {`hidden w-3/12 h-full mb-4 object-cover float-${position} lg:inline  ${position == "right" ? "ml-4" : "mr-4"}`}/>
     <slot/>
 </div>

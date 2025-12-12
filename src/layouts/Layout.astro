@@ -16,7 +16,7 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-min md:min-h-screen"> 
     <head>
         <title>{title} - phthallo</title>
         <meta charset="utf-8" />
@@ -51,14 +51,14 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
           transition: visibility 0.2s linear, opacity 0.2s linear;
         }
       </style>
-    <body class="z-1 m-0 h-full min-h-screen overflow-y-scroll bg-light-100 dark:bg-palette-700 bg-[url('/topographylight.svg')] dark:bg-[url('/topography.svg')] pt-0 font-proto text-white">
-        <div id="primary" class="z-2 m-auto grid min-h-screen p-4 md:p-8 transition-all duration-100 lg:w-1/2" style="grid-template-rows: auto 1fr auto">
-            <Header />
-            <main>
-              {!skipAutoSubheading && <h2 data-pagefind-meta="title">{title}</h2>}
-              <slot />
-            </main>        
-            <Footer />
-        </div>
-    </body>
+    <body class="h-min md:min-h-screen z-1 m-0 bg-light-100 dark:bg-palette-700 bg-[url('/topographylight.svg')] dark:bg-[url('/topography.svg')] pt-0 font-proto text-white">
+    <div id="primary" class="min-h-screen flex flex-col z-2 m-auto p-4 md:p-8 transition-all duration-100 lg:w-1/2">
+      <Header />
+      <main class = "grow">
+          {!skipAutoSubheading && <h2 data-pagefind-meta="title">{title}</h2>}
+          <slot />
+      </main>        
+      <Footer />
+    </div>    
+  </body>
 </html>

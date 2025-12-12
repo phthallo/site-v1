@@ -3,8 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import PreviewImage from "../components/PreviewImage.astro";
 ---
 
-<Layout title="home">
-	<main>
+<Layout title="home" skipAutoSubheading>
 		<p>I go by <b>phthallo</b> (pronunciation contentious, but I accept <i>phay-low</i> or <i>thay-low</i>) everywhere online. I am a 17 year old programmer from Australia.</p>
 		<p>Thanks for visiting - add something to my <a href = "/guestbook" aria-label="Visit the Guestbook page">guestbook</a> before you go :]</p>
 		<PreviewImage src = "/src/assets/etc/paint.jpg" altText = "The map 'Paint' from the Celeste Strawberry Jam Collab."></PreviewImage>
@@ -23,6 +22,5 @@ import PreviewImage from "../components/PreviewImage.astro";
             </b>
         </div>
     </div>
-	</main>
 </Layout>
 

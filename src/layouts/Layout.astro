@@ -7,9 +7,10 @@ interface Props {
     title: string;
     description?: string;
     ogImage?: string;
+    skipAutoSubheading?: boolean;
 }
 
-const { title, description, ogImage } = Astro.props;
+const { title, description, ogImage, skipAutoSubheading } = Astro.props;
 const permalink = new URL(Astro.url.pathname, Astro.site).href;
 const ogImageURL = new URL(ogImage, Astro.site).href;
 ---
@@ -53,7 +54,10 @@ const ogImageURL = new URL(ogImage, Astro.site).href;
     <body class="z-1 m-0 h-full min-h-screen overflow-y-scroll bg-light-100 dark:bg-palette-700 bg-[url('/topographylight.svg')] dark:bg-[url('/topography.svg')] pt-0 font-proto text-white">
         <div id="primary" class="z-2 m-auto grid min-h-screen p-4 md:p-8 transition-all duration-100 lg:w-1/2" style="grid-template-rows: auto 1fr auto">
             <Header />
-            <slot />
+            <main>
+              {!skipAutoSubheading && <h2 data-pagefind-meta="title">{title}</h2>}
+              <slot />
+            </main>        
             <Footer />
         </div>
     </body>

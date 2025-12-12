@@ -1,6 +1,6 @@
 
 <script is:inline src="/pagefind/pagefind-ui.js"></script>
-  <script>
+<script>
     import { PagefindUI } from "@pagefind/default-ui";
     window.addEventListener("DOMContentLoaded", () => {
       const dialog = document.getElementById("search-dialog") as HTMLDialogElement;
@@ -14,6 +14,7 @@
         element: "#search",
         showSubResults: true,
         autofocus: true,
+        resetStyles: false
       });
 
       const el = document.querySelector(".pagefind-ui");

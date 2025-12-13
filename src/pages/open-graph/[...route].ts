@@ -15,7 +15,6 @@ export const { getStaticPaths, GET } = OGImageRoute({
     description: page.description,
     logo: { path: 'public/favicon.ico' },
     bgGradient: [[19, 15, 25]],
-    font: { title: { families: [ "0xProto", "monospace" ] }, description: { families: [ "0xProto", "monospace" ] } }, 
-    fonts: ["public/fonts/0xProto/0xProtoNerdFont-Regular.ttf"]
+    font: { title: { families: [ "monospace" ] }, description: { families: [ "monospace" ] } }, 
   }),
 });

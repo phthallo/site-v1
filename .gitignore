@@ -2,6 +2,9 @@
 # build output
 dist/
 
+# blod drafts
+src/posts/drafts
+
 # generated types
 .astro/
 

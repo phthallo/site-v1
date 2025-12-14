@@ -80,10 +80,10 @@
 @layer components {
 
     h1 {
-        @apply text-2xl transition-all duration-100 md:text-4xl text-light-600 dark:text-white;
+        @apply text-2xl 2xl:text-3xl transition-all duration-100 md:text-4xl text-light-600 dark:text-white;
     }
     h2 {
-        @apply my-4 text-xl transition-all duration-100 md:text-2xl;
+        @apply my-4 text-xl transition-all duration-100 md:text-2xl 2xl:text-3xl;
     }
 
     h3 {
@@ -95,7 +95,7 @@
     }
 
     p, ul, span, div, pre {
-        @apply text-[#242029]/90 dark:text-white text-sm md:text-base lg:text-lg;
+        @apply text-[#242029]/90 dark:text-white text-sm md:text-base lg:text-lg 2xl:text-2xl;
     }
     
     ul {

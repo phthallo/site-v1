@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@view-transition {
+  navigation: auto;
+}
+
 @layer base {
     :root {
         --tangrey: #8e878c;

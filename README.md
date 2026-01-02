@@ -1,5 +1,5 @@
 # site-v1
-![780shots_so](https://github.com/user-attachments/assets/62a3a78b-6546-40f8-90d5-be125bf547b9)
+<img width="1920" height="1080" alt="132_1x_shots_so" src="https://github.com/user-attachments/assets/0050c248-2287-42e0-badc-00c626cab4a6" />
 
 Personal site/portfolio/blog, built with [Astro](https://astro.build/) and [Tailwind](https://tailwindcss.com/) ft. two themes and a responsive, mobile-friendly design. It's fully static and optimised to a few hundred kilobytes.
 

@@ -99,7 +99,7 @@
     }
 
     p, ul, span, div, pre, ol {
-        @apply text-[#242029]/90 dark:text-white text-sm md:text-base lg:text-lg 2xl:text-2xl;
+        @apply text-[#242029] dark:font-normal dark:text-white text-sm md:text-base lg:text-lg 2xl:text-2xl;
     }
     
     ul {

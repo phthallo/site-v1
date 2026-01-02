@@ -10,19 +10,21 @@ interface Props {
 const { post } = Astro.props;
 ---
 <Layout title={post.data.title} ogImage=`open-graph/${post.id}.png` description={post.data.description}>
-<div>
-<span class = "italic flex flex-row justify-between">
-    <b>{post.data.pubDate.toDateString()}</b> 
-    
-    <span>tags: { post.data.tags.map(tag => 
-    <a class="mr-2" href = {`/tags/${tag}`}>{tag}</a>
-    )}</span>
-</span>
-{post.data.image && <PreviewImage src = {post.data.image.url} altText = {post.data.image.alt}/> }
-<span class = "italic text-center">
-    {post.data.description}
-</span>
+    <div>
+        <span class = "italic flex flex-row justify-between">
+            <b>{post.data.pubDate.toDateString()}</b> 
+            
+            <span>tags: { post.data.tags.map(tag => 
+            <a class="mr-2" href = {`/tags/${tag}`}>{tag}</a>
+            )}</span>
+        </span>
+        {post.data.image && <PreviewImage src = {post.data.image.url} altText = {post.data.image.alt}/> }
+        <span class = "italic text-center">
+            {post.data.description}
+        </span>
 
-<slot/>
-</div>
+        <article class = "prose dark:prose-invert prose-base prose-headings:text-light-500 prose-a:text-light-500 my-3 max-w-none">
+            <slot/>
+        </article>
+    </div>
 </Layout>

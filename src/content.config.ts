@@ -11,8 +11,16 @@ const blog = defineCollection({
         alt: z.string()
       }).optional(),
       tags: z.array(z.string()),
-      password: z.boolean().optional(),
     })
 });
 
-export const collections = { blog };
+const thoughts = defineCollection({
+    loader: glob({ pattern: '*.md', base: "./src/thoughts" }),
+    schema: z.object({
+      pubDate: z.date(),
+      tags: z.array(z.string()).optional(),
+    })
+});
+
+
+export const collections = { blog, thoughts};

@@ -10,5 +10,6 @@ export default defineConfig({
   output: "static",
   integrations: [tailwind({applyBaseStyles:true}), sitemap({
           filter: page => page !== 'https://phthallo.com/404'
-      }), mdx(), pagefind()]
+      }), mdx(), pagefind()],
+
 });

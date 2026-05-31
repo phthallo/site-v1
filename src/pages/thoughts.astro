@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection, render } from 'astro:content';
+
+const thoughtCollection = await getCollection('thoughts');
+const thoughts = await Promise.all(
+  thoughtCollection
+    .sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.data.pubDate.toString()))
+    .map(async thought => ({
+      ...thought,
+      Content: (await render(thought)).Content,
+    }))
+);
+---
+<Layout title="thoughts">
+  {thoughts.map(thought => (
+    <div class="relative flex flex-col overflow-auto bg-light-200/40 dark:bg-palette-900 border border-black/20 dark:border-white/20">
+      <div class="p-4 h-full flex flex-col">
+        <thought.Content />
+        <i>{thought.data.pubDate.toLocaleDateString()}</i>
+      </div>
+    </div>
+  ))}
+</Layout>

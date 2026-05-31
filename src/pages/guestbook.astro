@@ -13,7 +13,7 @@ import Columns from "../components/Columns.astro"
             div.innerHTML = `
             <span><b>${item.name}</b> said</span>
             <p class = "grow">${item.message}</p>
-            <i>${new Date(item.timestamp).toUTCString()}</i>
+            <i>${new Date(item.timestamp).toLocaleString()}</i>
             `
             container.appendChild(div);
         })

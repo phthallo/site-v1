@@ -91,7 +91,7 @@
     }
 
     h3 {
-        @apply transition-all duration-100 text-lg mb-[0.75em] underline
+        @apply transition-all duration-100 text-lg mb-[0.75em] underline dark:text-palette-300
     }
 
     hr {
@@ -148,6 +148,9 @@
 }
 
 
+th {
+    @apply dark:text-palette-300;
+}
 
 .footnotes {
     @apply m-auto pb-[5.5vh] mt-[1rem] relative w-full

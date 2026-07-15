@@ -9,16 +9,29 @@ import Columns from "../components/Columns.astro"
         const container = document.getElementsByClassName('id_column')[0];
         entries.forEach(item => {
             const div = document.createElement('div');
-            div.className = 'bg-light-200/40 dark:bg-palette-900 border border-black/20 dark:border-white/20  p-4 flex flex-col'; 
-            div.innerHTML = `
-            <span><b>${item.name}</b> said</span>
-            <p class = "grow">${item.message}</p>
-            <i>${new Date(item.timestamp).toLocaleString()}</i>
-            `
+            div.className = 'bg-light-200/40 dark:bg-palette-900 border border-black/20 dark:border-white/20  p-4 flex flex-col';
+
+            const span = document.createElement('span');
+            const b = document.createElement('b');
+            b.textContent = item.name;
+            span.appendChild(b);
+            span.append(' said');
+
+            const p = document.createElement('p');
+            p.className = 'grow';
+            p.textContent = item.message;
+
+            const i = document.createElement('i');
+            i.textContent = new Date(item.timestamp).toLocaleString();
+
+            div.append(span, p, i);
             container.appendChild(div);
         })
         if (entries.length == 0) {
-            container.innerHTML = `<p class = "flex flex-1 items-center justify-center italic">no entries found :{'('}</p>}`
+            const p = document.createElement('p');
+            p.className = 'flex flex-1 items-center justify-center italic';
+            p.textContent = "no entries found :(";
+            container.replaceChildren(p);
         }
     </script>
     <div class = "flex flex-col">

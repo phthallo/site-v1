@@ -1,0 +1,26 @@
+---
+const url = import.meta.env.RETROLOCATION_URL ?? 'https://km1m3eilw58vb3dxzeiuc9dn.underwhelm.ing';
+---
+
+<span data-recent-locations data-url={url}></span>
+
+<script>
+    const el = document.querySelector<HTMLElement>('[data-recent-locations]');
+    if (el) {
+        fetch(`${el.dataset.url}/public/recent`, { signal: AbortSignal.timeout(3_000) })
+            .then((res) => (res.ok ? res.json() : null))
+            .then((data) => {
+                const locations: string[] = data?.locations ?? [];
+                if (locations.length === 0) return;
+                el.append("Recently I've been seen in ");
+                locations.forEach((name, i) => {
+                    if (i > 0) el.append(i === locations.length - 1 ? ' and ' : ', ');
+                    const b = document.createElement('b');
+                    b.textContent = name;
+                    el.append(b);
+                });
+                el.append('.');
+            })
+            .catch((err) => console.warn('retrolocation fetch failed:', err));
+    }
+</script>

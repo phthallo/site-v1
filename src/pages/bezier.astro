@@ -16,7 +16,7 @@ const params = [
         <p>Outputs the parametric equations of a Bezier curve that:
             <ul class = "list-disc list-inside">
                 <li>begins at start point <code>(x<sub>0</sub>, y<sub>0</sub>, z<sub>0</sub>)</code></li>
-                <li>is guided by control points <code>(x<sub>1</sub>, y<sub>1</sub>)</code> and <code>(x<sub>2</sub>, y<sub>2</sub>)</code>
+                <li>is guided by control points <code>(x<sub>1</sub>, y<sub>1</sub>)</code> and <code>(x<sub>2</sub>, y<sub>2</sub>)</code></li>
                 <li>ends at <code>(x<sub>3</sub>, y<sub>3</sub>, z<sub>3</sub>)</code></li>
                 <li>has restriction <code>0≤t≤1</code></li>
 
@@ -27,13 +27,13 @@ const params = [
             {params.map(param =>  
                 <span>
                     <b><label for={param.id}>{param.text}:</label></b>
-                    <input class = "w-full p-2 my-2  focus:outline-none" type="text" id={param.id} name={param.id}>
+                    <input class = "w-full p-2 my-2  focus:outline-none" type="text" id={param.id} name={param.id} />
                 </span>
             )}
             </Columns>
             <span>
-                <b><input onclick=store() type="submit" value="Submit"></b>
-                <b><input onclick=resetForm("calculator") type="submit" value="Clear"></b>
+                <b><input onclick="store()" type="submit" value="Submit" /></b>
+                <b><input onclick="resetForm('calculator')" type="submit" value="Clear" /></b>
             </span>
           </form> 
             <hr/>
